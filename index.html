@@ -38,13 +38,13 @@ p{ text-wrap:pretty}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media(max-width:560px){.statcard:hover{transform:none}.characteroption:hover{transform:none}}
 
-/* Microinterações HZM: suaves, curtas e sem movimento contínuo */
-@keyframes hzm-panel-enter{from{opacity:0;transform:translate3d(0,18px,0) scale(.97)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+/* Microinterações HZM: abertura e fechamento suaves, sem movimento contínuo */
+@keyframes hzm-panel-enter{from{opacity:0;transform:translate3d(0,12px,0) scale(.985)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
 @keyframes hzm-backdrop-enter{from{opacity:0}to{opacity:1}}
-.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal{animation:hzm-panel-enter .55s cubic-bezier(.2,.7,.25,1) both}
-.confirmoverlay:not(.hidden) .confirmbackdrop{animation:hzm-backdrop-enter .16s ease-out both}
-.charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .6s cubic-bezier(.2,.7,.25,1) both}
-.charpicker:not(.hidden) .charpickerbackdrop{animation:hzm-backdrop-enter .18s ease-out both}
+.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal{animation:hzm-panel-enter .3s cubic-bezier(.2,.75,.25,1) both}
+.confirmoverlay:not(.hidden) .confirmbackdrop{animation:hzm-backdrop-enter .22s ease-out both}
+.charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .32s cubic-bezier(.2,.75,.25,1) both}
+.charpicker:not(.hidden) .charpickerbackdrop{animation:hzm-backdrop-enter .22s ease-out both}
 @media(prefers-reduced-motion:reduce){.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal,.confirmoverlay:not(.hidden) .confirmbackdrop,.charpicker:not(.hidden) .charpickermodal,.charpicker:not(.hidden) .charpickerbackdrop{animation:none!important}}
 
 /* Cabeçalho fixo no seletor: ações de fechar e título sempre visíveis */
@@ -52,10 +52,10 @@ p{ text-wrap:pretty}
 @media(max-width:560px){.charpickermodal>.charpickerhead{top:-17px;margin:-17px -17px 14px;padding:17px 17px 12px}}
 
 /* HZM: progresso, fechamento suave e troca de personagem */
-@keyframes hzm-panel-exit{from{opacity:1;transform:translate3d(0,0,0) scale(1)}to{opacity:0;transform:translate3d(0,8px,0) scale(.98)}}
+@keyframes hzm-panel-exit{from{opacity:1;transform:translate3d(0,0,0) scale(1)}to{opacity:0;transform:translate3d(0,6px,0) scale(.985)}}
 @keyframes hzm-backdrop-exit{from{opacity:1}to{opacity:0}}
-.confirmoverlay .detailmodal.hzm-closing,.confirmoverlay .confirmmodal.hzm-closing,.charpicker .charpickermodal.hzm-closing{animation:hzm-panel-exit .24s ease-in both}
-.confirmoverlay .confirmbackdrop.hzm-closing,.charpicker .charpickerbackdrop.hzm-closing{animation:hzm-backdrop-exit .22s ease-in both}
+.confirmoverlay .detailmodal.hzm-closing,.confirmoverlay .confirmmodal.hzm-closing,.charpicker .charpickermodal.hzm-closing{animation:hzm-panel-exit .2s cubic-bezier(.4,0,1,1) both}
+.confirmoverlay .confirmbackdrop.hzm-closing,.charpicker .charpickerbackdrop.hzm-closing{animation:hzm-backdrop-exit .18s ease-in both}
 #chardetail.hzm-character-change>*{animation:hzm-panel-enter .32s cubic-bezier(.2,.7,.25,1) both}
 .characterpick,.characterface,.person,.portrait,.characteroption{transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease}
 .characteroption.selected{box-shadow:inset 0 0 0 1px rgba(181,140,255,.18),0 4px 16px rgba(0,0,0,.16)}
