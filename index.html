@@ -61,6 +61,12 @@ p{ text-wrap:pretty}
 .characteroption.selected{box-shadow:inset 0 0 0 1px rgba(181,140,255,.18),0 4px 16px rgba(0,0,0,.16)}
 .characteroption:active{transform:scale(.985)}
 @media(prefers-reduced-motion:reduce){.progress>span{transition:none!important}.confirmoverlay .detailmodal.hzm-closing,.confirmoverlay .confirmmodal.hzm-closing,.charpicker .charpickermodal.hzm-closing,.confirmoverlay .confirmbackdrop.hzm-closing,.charpicker .charpickerbackdrop.hzm-closing,#chardetail.hzm-character-change>*{animation:none!important}}
+
+/* Cabeçalho fixo nas janelas longas: X sempre visível, sem cobrir o conteúdo */
+.detailmodal>.detailhead{position:sticky;top:-19px;z-index:6;margin:-19px -19px 14px;padding:17px 19px 12px;background:linear-gradient(155deg,#251837 0%,#191126 100%);border-bottom:1px solid rgba(181,140,255,.18);border-radius:17px 17px 0 0}
+.detailmodal>.detailhead>div{min-width:0;padding-top:2px}
+.detailmodal>.detailhead .pickerclose{flex:0 0 36px;position:relative;z-index:1}
+@media(max-width:560px){.detailmodal>.detailhead{top:-17px;margin:-17px -17px 14px;padding:15px 17px 11px}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><div class="fonttools"><label for="fontselect">Fonte</label><select class="fontselect" id="fontselect" aria-label="Escolher fonte para pré-visualizar"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option></select></div></header>
 
