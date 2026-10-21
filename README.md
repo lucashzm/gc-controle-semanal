@@ -1,22 +1,42 @@
 # HZM Soluções — Grand Chase Classic
 
-Painel pessoal para organizar personagens, desafios semanais e pedidos de serviços do Grand Chase Classic.
+Painel pessoal para organizar personagens, desafios e pedidos de serviços do Grand Chase Classic.
 
-## Como usar
-- Abra `index.html` em um navegador ou publique o repositório com GitHub Pages.
-- Na aba **Minha conta**, cadastre cada conta do jogo e os personagens que pertencem a ela.
-- O catálogo de personagens inclui Elesis, Lire, Arme, Lass, Ryan, Ronan, Amy, Jin, Sieghart, Mari, Dio, Zero, Rey, Lupus, Lin, Azin, Holy, Edel, Veigas, Uno, Decanee, Ai, Kallia e Iris.
-- Na aba **Controle de vendas**, crie um pedido, adicione cada fase/material como um serviço, informe a quantidade contratada e o valor atribuído a esse serviço.
-- Registre o tempo de cada ida individualmente com o formato `mm:ss`, ou use **Colar tempos** para inserir uma lista separada por vírgulas ou linhas.
-- O painel calcula tempo total, média por ida, valor por hora/minuto e ranking por serviço. As taxas/custos informados no pedido são distribuídos proporcionalmente entre os serviços para estimar o retorno líquido.
-- Use **Exportar backup** regularmente para guardar uma cópia JSON dos dados.
+## Organização dos dados
 
-## Armazenamento e limitações atuais
-Esta primeira versão salva os dados no `localStorage` do navegador e do dispositivo em que for usada. Os registros não são sincronizados entre computadores ou navegadores. Para sincronização entre dispositivos e autenticação, será necessário integrar um banco de dados, como Supabase.
+- **Minha conta:** contas do jogo, personagens, desafios semanais e marcações pessoais ficam no navegador atual.
+- **Controle de vendas:** clientes/pedidos, itens vendidos, taxas da plataforma, tempos individuais e observações de melhoria são salvos no Supabase do projeto `hzm-solutions`.
+- Os pedidos exigem login. Cada conta autenticada só pode acessar seus próprios registros por meio das políticas de segurança do banco (RLS).
+- O catálogo inicial é criado automaticamente no primeiro acesso autenticado, sem valores fixos.
 
-Os retratos padrão são carregados de URLs do site Grand Chase Creator. Se uma imagem externa deixar de estar disponível, o painel exibe as iniciais do personagem; também é possível informar outra URL ou carregar uma imagem do computador. Imagens carregadas do computador ficam apenas no navegador atual e podem aumentar o tamanho do backup.
+## Registrar um pedido
+
+1. Entre na aba **Controle de vendas** e crie uma conta de acesso com seu e-mail e uma senha, ou entre com a conta existente.
+2. Informe o cliente ou identificador do pedido, data, status, plataforma e a taxa cobrada pela plataforma (se houver).
+3. Escolha o modo de cobrança:
+   - **Cobrar por item:** informe o valor de cada serviço.
+   - **Cobrar por pacote:** informe um único valor para o pedido inteiro; os itens e seus tempos continuam registrados, mas o sistema não inventa uma divisão de receita entre eles.
+4. Adicione os serviços do catálogo, a quantidade, o personagem usado e, se quiser, uma observação sobre melhorias no personagem.
+5. Registre cada tempo individualmente, use o cronômetro ou cole uma lista no formato `mm:ss`.
+6. Salve o pedido. Os pedidos e os tempos de execução ficam no banco, permitindo consultar o histórico em outro dispositivo depois de entrar na mesma conta.
+
+O catálogo inclui Void 1, Void 2, Void 3, Void 4, pacotes Void semanal e mensal, Torre das Ilusões, Eclipse, Harrier, Kricktria, Farm Abyssal e opções de up de personagem. Os valores não são predefinidos: você os informa ao criar cada pedido.
+
+## Análises
+
+O painel calcula faturamento, taxas, tempo registrado, retorno geral por hora e ranking de serviços. Para pedidos cobrados por item, estima o retorno por serviço descontando uma parte proporcional da taxa do pedido. Em pedidos por pacote, não atribui receita artificialmente a cada serviço; os tempos continuam sendo usados para comparar desempenho.
+
+Os tempos de execução são associados ao personagem informado na linha do serviço. A observação de melhoria permite registrar marcos como troca de arma ou evolução de equipamento e comparar os tempos antes e depois.
+
+## Limitações e backup
+
+- Dados da área **Minha conta** ficam no navegador e não são sincronizados. Limpar os dados do site pode apagá-los; o botão **Exportar backup** pode ser usado para guardar uma cópia.
+- Os pedidos ficam no Supabase e não dependem do armazenamento local do navegador.
+- Imagens locais dos personagens ficam apenas no navegador atual.
+- Se o Supabase exigir confirmação de e-mail, confirme a mensagem recebida antes de entrar.
 
 ## Publicar com GitHub Pages
+
 1. Abra **Settings → Pages** neste repositório.
 2. Em **Build and deployment**, selecione **Deploy from a branch**.
 3. Selecione a branch `main` e a pasta `/ (root)`, depois salve.
