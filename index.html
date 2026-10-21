@@ -37,6 +37,15 @@ p{ text-wrap:pretty}
 .muted,.statcardhint,.statlabel{letter-spacing:.005em}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media(max-width:560px){.statcard:hover{transform:none}.characteroption:hover{transform:none}}
+
+/* Microinterações HZM: suaves, curtas e sem movimento contínuo */
+@keyframes hzm-panel-enter{from{opacity:0;transform:translate3d(0,8px,0) scale(.99)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes hzm-backdrop-enter{from{opacity:0}to{opacity:1}}
+.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal{animation:hzm-panel-enter .2s cubic-bezier(.2,.7,.25,1) both}
+.confirmoverlay:not(.hidden) .confirmbackdrop{animation:hzm-backdrop-enter .16s ease-out both}
+.charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .22s cubic-bezier(.2,.7,.25,1) both}
+.charpicker:not(.hidden) .charpickerbackdrop{animation:hzm-backdrop-enter .18s ease-out both}
+@media(prefers-reduced-motion:reduce){.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal,.confirmoverlay:not(.hidden) .confirmbackdrop,.charpicker:not(.hidden) .charpickermodal,.charpicker:not(.hidden) .charpickerbackdrop{animation:none!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><div class="fonttools"><label for="fontselect">Fonte</label><select class="fontselect" id="fontselect" aria-label="Escolher fonte para pré-visualizar"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option></select></div></header>
 
