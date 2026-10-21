@@ -41,9 +41,9 @@ p{ text-wrap:pretty}
 /* Microinterações HZM: suaves, curtas e sem movimento contínuo */
 @keyframes hzm-panel-enter{from{opacity:0;transform:translate3d(0,18px,0) scale(.97)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
 @keyframes hzm-backdrop-enter{from{opacity:0}to{opacity:1}}
-.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal{animation:hzm-panel-enter .3s cubic-bezier(.2,.7,.25,1) both}
+.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal{animation:hzm-panel-enter .55s cubic-bezier(.2,.7,.25,1) both}
 .confirmoverlay:not(.hidden) .confirmbackdrop{animation:hzm-backdrop-enter .16s ease-out both}
-.charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .32s cubic-bezier(.2,.7,.25,1) both}
+.charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .6s cubic-bezier(.2,.7,.25,1) both}
 .charpicker:not(.hidden) .charpickerbackdrop{animation:hzm-backdrop-enter .18s ease-out both}
 @media(prefers-reduced-motion:reduce){.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal,.confirmoverlay:not(.hidden) .confirmbackdrop,.charpicker:not(.hidden) .charpickermodal,.charpicker:not(.hidden) .charpickerbackdrop{animation:none!important}}
 
