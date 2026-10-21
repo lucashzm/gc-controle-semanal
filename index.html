@@ -46,6 +46,10 @@ p{ text-wrap:pretty}
 .charpicker:not(.hidden) .charpickermodal{animation:hzm-panel-enter .22s cubic-bezier(.2,.7,.25,1) both}
 .charpicker:not(.hidden) .charpickerbackdrop{animation:hzm-backdrop-enter .18s ease-out both}
 @media(prefers-reduced-motion:reduce){.confirmoverlay:not(.hidden) .detailmodal,.confirmoverlay:not(.hidden) .confirmmodal,.confirmoverlay:not(.hidden) .confirmbackdrop,.charpicker:not(.hidden) .charpickermodal,.charpicker:not(.hidden) .charpickerbackdrop{animation:none!important}}
+
+/* Cabeçalho fixo no seletor: ações de fechar e título sempre visíveis */
+.charpickermodal>.charpickerhead{position:sticky;top:-18px;z-index:5;margin:-18px -18px 14px;padding:18px 18px 12px;background:linear-gradient(155deg,#211632 0%,#191126 100%);border-bottom:1px solid rgba(181,140,255,.14);border-radius:18px 18px 0 0}
+@media(max-width:560px){.charpickermodal>.charpickerhead{top:-17px;margin:-17px -17px 14px;padding:17px 17px 12px}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><div class="fonttools"><label for="fontselect">Fonte</label><select class="fontselect" id="fontselect" aria-label="Escolher fonte para pré-visualizar"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option></select></div></header>
 
