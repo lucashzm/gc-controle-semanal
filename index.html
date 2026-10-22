@@ -333,7 +333,36 @@ html[data-visual-mode="light"] body{background:#111018;color:#eeeaf5;font-family
 .weeklyportrait-wrap:nth-child(-n+6):hover::before,.weeklyportrait-wrap:nth-child(-n+6):focus-visible::before{transform:translate(-50%,0) rotate(225deg)}
 
 @media(prefers-reduced-motion:reduce){.weeklyportrait-wrap::after,.weeklyportrait-wrap::before{transition:none}}
-.pickcopy small.characterstate{display:inline-flex;align-items:center;width:max-content;max-width:100%;padding:2px 7px;border:1px solid transparent;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4}.pickcopy small.characterstate.complete{color:#a9e6c1;border-color:#315d47;background:#10251b}.pickcopy small.characterstate.inprogress{color:#d6b5ff;border-color:#65478b;background:#241536}.pickcopy small.characterstate.notstarted{color:var(--muted);border-color:#493461;background:#171020}</style></head><body><main class="app">
+.pickcopy small.characterstate{display:inline-flex;align-items:center;width:max-content;max-width:100%;padding:2px 7px;border:1px solid transparent;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4}.pickcopy small.characterstate.complete{color:#a9e6c1;border-color:#315d47;background:#10251b}.pickcopy small.characterstate.inprogress{color:#d6b5ff;border-color:#65478b;background:#241536}.pickcopy small.characterstate.notstarted{color:var(--muted);border-color:#493461;background:#171020}
+/* Refinamento visual: hierarquia mais limpa e menos ruído */
+.top{padding-bottom:12px;border-bottom:1px solid #ffffff0c;margin-bottom:14px}
+.clockcard{border-radius:13px;background:linear-gradient(115deg,#1c1429f2,#100c19f2);border-color:#3d2b52;box-shadow:0 8px 24px #00000016}
+.card{border-color:#3f2e54}
+.statcardhint{font-size:11px;color:#a99abf;margin-top:5px}
+.stats .card{border-radius:13px}
+.overviewsummary{padding:4px 2px}
+.overviewsummary strong{font-size:14px;letter-spacing:-.01em}
+.overviewsummary small{font-size:11px}
+.overviewcontent{padding-top:8px}
+.weeklyitem{border-color:#3e2d52;background:linear-gradient(145deg,#171021,#100b19)}
+.weeklyitemhead{padding:12px 14px}
+.weeklyitemhead:hover{background:#21152f}
+.weeklyitem>.progress{margin-left:14px;margin-right:14px}
+.weeklyitembody{padding-left:14px;padding-right:14px}
+.characterpickbtn{background:linear-gradient(120deg,#241832,#1b1228);border-color:#57406f}
+.characterpickbtn:hover{border-color:#9270b6;background:#2a1b3b}
+.btn{box-shadow:0 1px 0 #ffffff08 inset}
+@media(max-width:560px){
+ .top{align-items:flex-start;flex-wrap:wrap;padding-bottom:10px}
+ .fonttools{margin-left:auto}
+ .clockcard{margin-top:4px}
+ .overviewsummary{padding:3px 0}
+ .weeklyitemhead{padding:11px}
+ .weeklyitem>.progress{margin-left:11px;margin-right:11px}
+ .weeklyitembody{padding-left:11px;padding-right:11px}
+}
+@media(prefers-reduced-motion:reduce){.statcard,.btn,.characterpickbtn,.weeklyitemhead{transition:none!important}}
+</style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option><option value="spacegrotesk">Space Grotesk</option><option value="playfair">Playfair Display</option><option value="roboto-mono">Roboto Mono</option><option value="oswald">Oswald</option></select></div></header>
 
 <section class="clockcard" aria-label="Horário de Brasília e contagem para o reset"><div class="clockmain"><div class="clockinfo"><div class="clocklabel">Horário de Brasília</div><div class="clockline"><div class="clocktime" id="brasilia-time">--:--:--</div><div class="clockdate" id="brasilia-date">Carregando data...</div></div></div></div><div class="resetbox"><div class="resetlabel">Próximo reset semanal</div><div class="resetcount" id="reset-countdown">Calculando...</div><div class="resetnote" id="reset-message">Quarta-feira, às 03h (horário de Brasília)</div></div></section>
@@ -344,11 +373,11 @@ html[data-visual-mode="light"] body{background:#111018;color:#eeeaf5;font-family
 <div class="field"><label>Personagem selecionado</label><button type="button" class="characterpickbtn" id="opencharpicker"><span class="characterpick"><span class="characterface" id="selectedcharface">GC</span><span class="pickcopy"><strong id="selectedcharname">Selecionar personagem</strong><small>Toque para escolher</small></span></span><span class="pickchevron">⌄</span></button><select id="selectedchar" class="hidden" aria-hidden="true" tabindex="-1"></select></div>
 <div class="divider"></div><div id="chardetail"></div>
 </div><details class="card overviewdetails">
-<summary class="overviewsummary"><span><strong>Visão geral detalhada</strong><small>Confira o progresso de todos os desafios da semana</small></span><span class="overviewchevron" aria-hidden="true">›</span></summary>
+<summary class="overviewsummary"><span><strong>Visão geral</strong><small>Progresso por desafio e personagem</small></span><span class="overviewchevron" aria-hidden="true">›</span></summary>
 <div class="overviewcontent">
-<div class="head" style="margin:12px 0"><div><h3 style="margin:0">Progresso geral da semana</h3><p>Toque no desafio para abrir ou recolher os personagens.</p></div><div class="overviewedittools"><span class="pill" id="weeklabel"></span><button type="button" class="btn small" id="overvieweditbutton" aria-pressed="false" title="Ativar edição da ordem">Editar ordem</button></div></div>
+<div class="head" style="margin:12px 0"><div><h3 style="margin:0">Desafios da semana</h3><p>Abra cada desafio para ver os personagens.</p></div><div class="overviewedittools"><span class="pill" id="weeklabel"></span><button type="button" class="btn small" id="overvieweditbutton" aria-pressed="false" title="Ativar edição da ordem">Editar ordem</button></div></div>
 <div id="weeklyoverview" class="weeklyoverview"></div>
-<p class="muted" style="margin-top:12px">O reset acontece toda quarta-feira, às 03h, no horário de Brasília.</p>
+
 </div>
 </details></div>
 </section>
