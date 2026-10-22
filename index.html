@@ -217,6 +217,53 @@ html[data-visual-mode="light"] body{background:#111018;color:#eeeaf5;font-family
  .weeklyitembody{padding:0 11px 11px!important}
  .weeklyportrait{width:46px!important;height:46px!important;flex-basis:46px!important}
 }
+
+/* Desktop: aproveitar a largura disponível e dar mais presença aos painéis */
+@media(min-width:800px){
+ .app{width:100%!important;max-width:none!important;margin:0!important;padding:12px 14px 22px!important}
+ .top{margin-bottom:12px!important;padding:0 4px!important;gap:14px!important}
+ .brand{gap:11px!important}
+ .logo{width:42px!important;height:42px!important;flex-basis:42px!important}
+ .grid{gap:14px!important}
+ .stats{gap:14px!important;margin-bottom:14px!important}
+ .card{padding:18px!important;border-radius:16px!important}
+ .layout{width:100%!important;grid-template-columns:minmax(320px,30%) minmax(0,1fr)!important;gap:14px!important;align-items:start!important}
+ .layout>*{min-width:0!important}
+ .head{margin-bottom:12px!important}
+ .head h2{font-size:26px!important}
+ .head p{font-size:14px!important}
+ .characterpickbtn{padding:11px 13px!important;min-height:72px!important}
+ .characterface{width:52px!important;height:52px!important;flex-basis:52px!important}
+ .pickcopy strong{font-size:16px!important}
+ .pickcopy small{font-size:12px!important}
+ .checkgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .check{min-width:0!important;padding:10px 11px!important;min-height:54px!important}
+ .check .detailchallenge{font-size:14px!important}
+ .weeklyoverview{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:start!important}
+ .weeklyitem{min-width:0!important}
+ .weeklyitemhead{padding:12px 14px!important}
+ .weeklyitembody{padding:0 14px 14px!important}
+ .weeklyportraits{gap:9px!important}
+ .weeklyportrait{width:clamp(44px,4.1vw,58px)!important;height:clamp(44px,4.1vw,58px)!important;flex-basis:clamp(44px,4.1vw,58px)!important}
+ .person{padding:11px!important}
+ .portrait{width:52px!important;height:52px!important;flex-basis:52px!important}
+ .field input,.field select,.field textarea{padding:10px 12px!important}
+}
+@media(min-width:1500px){
+ .app{padding-left:18px!important;padding-right:18px!important}
+ .layout{grid-template-columns:minmax(360px,27%) minmax(0,1fr)!important;gap:18px!important}
+ .weeklyoverview{gap:14px!important}
+ .card{padding:20px!important}
+ .check{padding:12px 13px!important}
+}
+@media(min-width:800px) and (max-height:800px){
+ .app{padding-top:8px!important;padding-bottom:12px!important}
+ .top{margin-bottom:8px!important}
+ .card{padding:14px!important}
+ .stats{margin-bottom:10px!important}
+ .head{margin-bottom:8px!important}
+ .weeklyoverview{gap:9px!important}
+}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option><option value="spacegrotesk">Space Grotesk</option><option value="playfair">Playfair Display</option><option value="roboto-mono">Roboto Mono</option><option value="oswald">Oswald</option></select></div></header>
 
