@@ -4,7 +4,7 @@ Painel pessoal para organizar personagens, desafios e pedidos de serviços do Gr
 
 ## Organização dos dados
 
-**Minha conta:** contas do jogo, personagens, desafios semanais e marcações pessoais ficam no navegador atual.
+**Minha conta:** personagens, desafios semanais e marcações pessoais ficam no navegador atual.
 
 ## Limitações e backup
 
