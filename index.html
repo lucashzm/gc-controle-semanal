@@ -61,7 +61,7 @@ p{ text-wrap:pretty}
 .characterpick,.characterface,.person,.portrait,.characteroption{transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease}
 .characteroption.selected{box-shadow:inset 0 0 0 1px rgba(181,140,255,.18),0 4px 16px rgba(0,0,0,.16)}
 .characteroption:active{transform:scale(.985)}
-@media(prefers-reduced-motion:reduce){.progress>span{transition:none!important}.confirmoverlay .detailmodal.hzm-closing,.confirmoverlay .confirmmodal.hzm-closing,.charpicker .charpickermodal.hzm-closing,.confirmoverlay .confirmbackdrop.hzm-closing,.charpicker .charpickerbackdrop.hzm-closing,#chardetail.hzm-character-change>*{animation:none!important}}
+@media(prefers-reduced-motion:reduce){/* Mantém o preenchimento suave das barras de progresso */.confirmoverlay .detailmodal.hzm-closing,.confirmoverlay .confirmmodal.hzm-closing,.charpicker .charpickermodal.hzm-closing,.confirmoverlay .confirmbackdrop.hzm-closing,.charpicker .charpickerbackdrop.hzm-closing,#chardetail.hzm-character-change>*{animation:none!important}}
 
 /* Cabeçalho fixo nas janelas longas: X sempre visível, sem cobrir o conteúdo */
 .detailmodal>.detailhead{position:sticky;top:-19px;z-index:6;margin:-19px -19px 14px;padding:17px 19px 12px;background:linear-gradient(155deg,#251837 0%,#191126 100%);border-bottom:1px solid rgba(181,140,255,.18);border-radius:17px 17px 0 0}
