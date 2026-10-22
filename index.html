@@ -362,6 +362,10 @@ html[data-visual-mode="light"] body{background:#111018;color:#eeeaf5;font-family
  .weeklyitembody{padding-left:11px;padding-right:11px}
 }
 @media(prefers-reduced-motion:reduce){.statcard,.btn,.characterpickbtn,.weeklyitemhead{transition:none!important}}
+
+/* Mantém a abertura suave da visão geral mesmo no tema claro. */
+html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation:hzm-overview-reveal 1s cubic-bezier(.2,.7,.25,1) both!important;transform-origin:top center}
+@media(prefers-reduced-motion:reduce){html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation:none!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="dmoutfit">DM Sans + Outfit</option><option value="inter">Inter</option><option value="nunito">Nunito</option><option value="manrope">Manrope</option><option value="spacegrotesk">Space Grotesk</option><option value="playfair">Playfair Display</option><option value="roboto-mono">Roboto Mono</option><option value="oswald">Oswald</option></select></div></header>
 
