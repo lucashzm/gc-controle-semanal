@@ -1,4 +1,4 @@
-# HZM Soluções — Grand Chase Classic
+# HZM Soluções — GC
 
 Painel pessoal para organizar personagens, desafios e pedidos de serviços do Grand Chase Classic.
 
