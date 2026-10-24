@@ -398,6 +398,76 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 }
 @media(max-width:420px){.checkgrid{grid-template-columns:minmax(0,1fr)!important;gap:7px!important}.check{padding:9px 8px!important}}
 
+
+/* HZM — reorganização compacta do painel */
+.app{width:100%!important;max-width:none!important;padding:10px 12px 28px!important}
+.top{padding:7px 11px!important;margin-bottom:8px!important;min-height:48px!important;border-radius:11px!important}
+.brand{gap:9px!important}.logo{width:36px!important;height:36px!important;border-radius:10px!important}
+.clockcard{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;min-height:0!important;margin:0 0 10px!important;padding:5px 10px!important;border-radius:10px!important;box-shadow:none!important}
+.clockmain{flex:1!important;padding:0!important}.clockinfo{display:flex!important;align-items:center!important;gap:12px!important}
+.clocklabel{font-size:9px!important;white-space:nowrap!important}.clockline{gap:8px!important;align-items:baseline!important}
+.clocktime{font-size:18px!important;line-height:1.1!important;margin:0!important}.clockdate{font-size:10px!important}
+.resetbox{display:flex!important;align-items:center!important;gap:8px!important;padding:0 0 0 12px!important;border-left:1px solid var(--line)!important;background:transparent!important}
+.resetlabel{font-size:9px!important;white-space:nowrap!important}.resetcount{font-size:15px!important;white-space:nowrap!important}.resetnote{font-size:9px!important;white-space:nowrap!important}
+#view-account>.head{margin:8px 0 10px!important;align-items:center!important}
+#view-account>.head h2{font-size:23px!important}
+.stats{gap:8px!important;margin-bottom:9px!important}
+.stats>.card{padding:10px 12px!important;border-radius:11px!important;min-height:0!important}
+.statlabel{font-size:9px!important}.statvalue{font-size:22px!important;margin-top:2px!important}
+.statcardhint,.progresshint{font-size:10px!important;margin-top:4px!important}
+.globalprogress{height:5px!important;margin-top:6px!important}
+.layout{grid-template-columns:minmax(0,1fr)!important;gap:9px!important}
+.layout>.card:first-child{display:grid!important;grid-template-columns:minmax(190px,230px) minmax(0,1fr)!important;align-items:start!important;gap:10px 14px!important;padding:11px!important}
+.layout>.card:first-child>.field{grid-column:1!important;grid-row:1!important}
+.layout>.card:first-child>.divider{display:none!important}
+.layout>.card:first-child>#chardetail{grid-column:2!important;grid-row:1!important;min-width:0!important}
+.characterpickbtn{padding:8px!important;gap:6px!important}
+.characterface{width:38px!important;height:38px!important;flex-basis:38px!important}
+.pickcopy strong{font-size:12px!important}.pickcopy small{font-size:10px!important}
+#chardetail .person{padding:7px!important;margin-bottom:7px!important}
+#chardetail .checkgrid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:6px!important}
+#chardetail .check{padding:7px 6px!important;gap:5px!important;min-height:40px!important}
+#chardetail .check .challengeicon{width:24px!important;height:24px!important;flex-basis:24px!important}
+#chardetail .check .challengeicon svg{width:16px!important;height:16px!important}
+#chardetail .check .detailchallenge{gap:5px!important}
+#chardetail .check .detailchallenge>span:last-child{font-size:11px!important;line-height:1.25!important;overflow-wrap:anywhere!important}
+#chardetail .farm-actions{margin-top:7px!important;gap:5px!important}
+#chardetail .farm-actions .btn{padding:6px 8px!important;font-size:11px!important}
+.overviewdetails{padding:11px!important}
+.overviewcontent{padding-top:5px!important}
+.overviewcontent>.head{margin:6px 0 8px!important}
+.weeklyoverview{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:8px!important}
+.weeklyitemhead{padding:9px!important;gap:6px!important}
+.weeklyitemhead .weeklytitle{gap:5px!important}.weeklyitemhead .weeklytitle strong{font-size:11px!important;overflow-wrap:anywhere!important}
+.weeklyheadright{gap:5px!important}.weeklyheadright .muted{font-size:10px!important}
+.weeklyitem>.progress{margin:0 9px 9px!important}
+.weeklyitembody{padding:0 8px 8px!important}
+.weeklyportraits{gap:4px!important}
+@media(max-width:1100px){
+ .layout>.card:first-child{grid-template-columns:minmax(165px,200px) minmax(0,1fr)!important}
+ #chardetail .checkgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .weeklyoverview{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+ .app{padding:8px 8px 22px!important}
+ .clockcard{align-items:flex-start!important;flex-direction:column!important;gap:5px!important}
+ .clockinfo{flex-wrap:wrap!important;gap:7px!important}
+ .resetbox{width:100%!important;display:grid!important;grid-template-columns:auto auto!important;justify-content:space-between!important;border-left:0!important;border-top:1px solid var(--line)!important;padding:5px 0 0!important;gap:4px 8px!important}
+ .resetnote{grid-column:1/-1!important;white-space:normal!important}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .layout>.card:first-child{grid-template-columns:minmax(0,1fr)!important}
+ .layout>.card:first-child>.field,.layout>.card:first-child>#chardetail{grid-column:1!important}
+ .layout>.card:first-child>.field{grid-row:1!important}
+ .layout>.card:first-child>#chardetail{grid-row:2!important}
+ #chardetail .checkgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .weeklyoverview{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:420px){
+ .weeklyoverview{grid-template-columns:minmax(0,1fr)!important}
+ #chardetail .checkgrid{grid-template-columns:minmax(0,1fr)!important}
+ .clocktime{font-size:17px!important}
+}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
