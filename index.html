@@ -666,51 +666,52 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 .weeklyportrait-wrap.character-order-drop-target .weeklyportrait{filter:brightness(1.12)!important}
 
 
-/* Layout por linhas compartilhadas: reduzir a quantidade de faixas verticais. */
-.app{width:min(calc(100% - 28px),1480px);max-width:1480px;margin:0 auto;padding:12px 0 24px}
-.top{margin:0!important;min-height:44px;padding:5px 9px;border:1px solid #493461;border-radius:11px;background:#171020a8}
-.clockcard{display:inline-grid;width:max-content;max-width:100%;grid-template-columns:auto auto;margin:0;vertical-align:middle}
-.clockmain{padding:5px 10px;min-width:0}
-.clocklabel,.resetlabel{font-size:9px}
-.clocktime{font-size:19px;margin-top:0}
-.clockline{gap:7px}
+/* Painel em grade de cartões independentes: aproveitar espaço horizontal. */
+.app{width:min(calc(100% - 28px),1480px);max-width:1480px;margin:0 auto;padding:12px 0 24px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:9px;align-items:stretch}
+.app>.top{grid-column:1/-1;grid-row:auto;margin:0!important;min-height:44px;padding:5px 9px;border:1px solid #493461;border-radius:11px;background:#171020a8}
+.app>.clockcard{display:contents}
+.clockmain,.resetbox{min-width:0;min-height:62px;padding:8px 10px;background:#171020ef;border:1px solid #493461;border-radius:10px;display:flex;flex-direction:column;justify-content:center}
+.clockmain{grid-column:span 2}
+.resetbox{grid-column:span 2;border-left:1px solid #493461;grid-template-columns:1fr;gap:2px}
+.clocklabel,.resetlabel{font-size:9px;line-height:1.2}
+.clocktime{font-size:19px;margin:1px 0 0}
+.clockline{gap:6px;flex-wrap:wrap}
 .clockdate,.resetnote{font-size:10px}
-.resetbox{padding:5px 10px;column-gap:7px}
-.resetcount{font-size:13px}
-.app{display:grid;grid-template-columns:minmax(350px,1fr) auto;align-items:center;column-gap:14px;row-gap:8px}
-.app>.top{grid-column:1;grid-row:1}
-.app>.clockcard{grid-column:2;grid-row:1;justify-self:end}
-.app>#view-account{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(180px,auto) minmax(0,1fr);column-gap:12px;align-items:start}
-#view-account>.head{grid-column:1;grid-row:1;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.resetcount{font-size:14px;grid-column:1;white-space:normal}
+.resetnote{grid-column:1}
+.app>#view-account{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:9px;align-items:start}
+#view-account>.head{grid-column:span 3;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:10px 12px;background:#171020ef;border:1px solid #493461;border-radius:10px;min-height:100%}
 #view-account>.head h2{font-size:19px;line-height:1.2}
 #view-account>.head p{font-size:11px;margin-top:2px}
 #view-account>.head .btn{white-space:normal;text-align:left}
-#view-account>.stats{grid-column:2;grid-row:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:0;max-width:none}
-#view-account>.stats .card{padding:8px 10px;border-radius:10px}
+#view-account>.stats{grid-column:span 9;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;max-width:none}
+#view-account>.stats .card{padding:9px 10px;border-radius:10px;min-height:100%}
 #view-account .statvalue{font-size:20px;line-height:1.1;margin-top:2px}
 #view-account .statcardhint{font-size:10px;margin-top:2px}
 #view-account .globalprogress{height:5px;margin-top:6px}
 #view-account .progresshint{font-size:10px;margin-top:3px}
-#view-account>.layout{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(280px,330px) minmax(0,1fr);gap:10px;margin-top:0}
+#view-account>.layout{grid-column:1/-1;display:grid;grid-template-columns:minmax(270px,320px) minmax(0,1fr);gap:9px;margin:0}
 #view-account .overviewcontent>.head{margin:0 0 8px!important}
 #view-account .overviewcontent>.head h3{font-size:17px}
-@media(max-width:1050px){
- .app{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:calc(100% - 20px)}
- .app>.top,.app>.clockcard,.app>#view-account{width:100%}
- .app>.clockcard{display:grid;grid-template-columns:1fr 1fr}
- #view-account{display:flex!important;flex-direction:column;gap:8px}
- #view-account>.head{width:100%;flex-direction:row;align-items:center;justify-content:space-between}
- #view-account>.stats{width:100%;grid-template-columns:repeat(4,minmax(0,1fr))}
- #view-account>.layout{width:100%;grid-template-columns:minmax(250px,320px) minmax(0,1fr)}
+@media(max-width:1100px){
+ .app{width:calc(100% - 20px);grid-template-columns:repeat(8,minmax(0,1fr))}
+ .clockmain,.resetbox{grid-column:span 2}
+ .app>#view-account{grid-template-columns:repeat(8,minmax(0,1fr))}
+ #view-account>.head{grid-column:span 2}
+ #view-account>.stats{grid-column:span 6;grid-template-columns:repeat(2,minmax(0,1fr))}
+ #view-account>.layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr)}
 }
-@media(max-width:720px){
- .app{width:calc(100% - 16px);padding:8px 0 18px}
- .app>.top{flex-wrap:wrap}
- .app>.clockcard{grid-template-columns:1fr}
- .app>.clockcard .resetbox{border-left:0;border-top:1px solid var(--line)}
- #view-account>.head{align-items:flex-start}
- #view-account>.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
- #view-account>.layout{grid-template-columns:1fr}
+@media(max-width:760px){
+ .app{width:calc(100% - 16px);padding:8px 0 18px;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .app>.top{grid-column:1/-1;flex-wrap:wrap}
+ .clockmain,.resetbox{grid-column:span 1;min-height:72px}
+ .clockmain{padding:7px}
+ .resetbox{padding:7px;border-top:1px solid #493461}
+ .clockdate{font-size:9px}
+ .app>#view-account{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ #view-account>.head{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;min-height:0}
+ #view-account>.stats{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ #view-account>.layout{grid-column:1/-1;grid-template-columns:1fr}
 }
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
