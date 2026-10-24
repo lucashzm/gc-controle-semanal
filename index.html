@@ -551,6 +551,27 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 .brand h1{font-size:14px!important}
 .brand .logo{width:32px!important;height:32px!important;flex-basis:32px!important}
 
+
+/* HZM — cinco personagens por linha e margens externas removidas */
+.app{width:100%!important;max-width:none!important;margin:0!important;padding:6px 4px 20px!important}
+.weeklyoverview{width:100%!important}
+.weeklyitem{min-width:0!important}
+.weeklyitembody{min-width:0!important;padding-left:5px!important;padding-right:5px!important}
+.weeklyportraits{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:4px!important;width:100%!important;margin-top:7px!important}
+.weeklyportrait-wrap{display:flex!important;width:100%!important;min-width:0!important;flex:initial!important;align-items:center!important;justify-content:center!important}
+.weeklyportrait{width:100%!important;height:auto!important;aspect-ratio:1/1!important;min-width:0!important;flex:initial!important;border-radius:6px!important}
+.weeklyportrait img{width:100%!important;height:100%!important;object-fit:cover!important}
+@media(max-width:760px){
+ .app{padding:5px 3px 16px!important}
+ .weeklyoverview{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important}
+ .weeklyitembody{padding-left:4px!important;padding-right:4px!important}
+}
+@media(max-width:420px){
+ .weeklyoverview{grid-template-columns:minmax(0,1fr)!important}
+ .weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important}
+}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
