@@ -666,22 +666,26 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 .weeklyportrait-wrap.character-order-drop-target .weeklyportrait{filter:brightness(1.12)!important}
 
 
-/* Layout compacto: aproveita a largura da janela e reduz espaços verticais. */
-.app{max-width:none;width:100%;padding:12px 12px 24px}
-.top{margin-bottom:7px!important;min-height:48px;padding:7px 10px;border:1px solid #493461;border-radius:12px;background:#171020a8}
-.clockcard{margin:0 0 7px;grid-template-columns:minmax(0,1fr) minmax(300px,auto)}
-.head{margin:3px 0 8px;align-items:center;gap:8px}
+/* Layout em blocos compactos: evitar faixas que atravessam a tela sem necessidade. */
+.app{width:min(100% - 24px,1480px);max-width:1480px;margin:0 auto;padding:12px 0 24px}
+.top{width:100%;margin:0 0 10px!important;min-height:46px;padding:6px 10px;border:1px solid #493461;border-radius:12px;background:#171020a8}
+.clockcard{display:inline-grid;width:max-content;max-width:100%;grid-template-columns:auto auto;margin:0 0 12px;vertical-align:top}
+.clockmain{padding:7px 12px;min-width:245px}
+.resetbox{padding:7px 12px}
+#view-account{max-width:100%}
+.head{max-width:1100px;margin:0 0 10px;align-items:center;gap:12px}
 .head h2{font-size:21px;line-height:1.2}
 .head p{font-size:12px;margin-top:2px}
-.stats{gap:8px;margin-bottom:8px}
-.card{padding:11px 12px;border-radius:12px}
+.stats{max-width:1100px;grid-template-columns:repeat(4,minmax(150px,1fr));gap:8px;margin:0 0 12px}
+.stats .card{padding:10px 12px;border-radius:12px}
 .statvalue{font-size:22px;line-height:1.15;margin-top:3px}
 .statcardhint{font-size:11px;margin-top:2px}
 .globalprogress{height:6px;margin-top:7px}
 .progresshint{margin-top:4px}
 .layout{gap:10px}
-@media(min-width:1100px){.app{padding:10px 12px 20px}.stats{gap:8px}.card{padding:10px 12px}}
-@media(max-width:700px){.app{padding:8px 8px 18px}.top{flex-wrap:wrap}.head{align-items:flex-start}.clockcard{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.resetbox{padding:7px 9px}.card{padding:10px}}
+@media(min-width:1100px){.layout{grid-template-columns:minmax(300px,350px) minmax(0,1fr)}}
+@media(max-width:900px){.app{width:calc(100% - 20px)}.clockcard{display:grid;width:max-content;max-width:100%;grid-template-columns:minmax(0,1fr)}.clockmain{min-width:0}.resetbox{border-left:0;border-top:1px solid var(--line)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.app{width:calc(100% - 16px);padding:8px 0 18px}.top{flex-wrap:wrap}.head{align-items:flex-start}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.stats .card{padding:9px}.clockcard{width:100%}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
