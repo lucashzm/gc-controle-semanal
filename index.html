@@ -784,6 +784,41 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
  #view-account>.stats{grid-column:1/-1!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
  #view-account>.layout{grid-column:1/-1!important;grid-template-columns:1fr!important}
 }
+
+/* Correção de emergência do layout desktop: impedir que a grade encolha e esmague os desafios. */
+html body .app{display:grid!important;width:calc(100% - 24px)!important;max-width:1680px!important;margin:0 auto!important;padding:12px 0 24px!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;column-gap:9px!important;row-gap:9px!important;align-items:start!important}
+html body .app>.top{grid-column:1/-1!important;grid-row:auto!important;width:100%!important;min-width:0!important;display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important}
+html body .app>.clockcard{grid-column:span 4!important;grid-row:auto!important;width:100%!important;min-width:0!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;margin:0!important}
+html body .app>#view-account{grid-column:1/-1!important;grid-row:auto!important;width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:9px!important;align-items:start!important}
+html body #view-account>.head{grid-column:span 3!important;grid-row:auto!important;min-width:0!important}
+html body #view-account>.stats{grid-column:span 9!important;grid-row:auto!important;width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important}
+html body #view-account>.layout{grid-column:1/-1!important;grid-row:auto!important;width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(260px,320px) minmax(0,1fr)!important;gap:9px!important}
+html body #view-account .overviewcontent{width:100%!important;min-width:0!important}
+html body #view-account .overviewcontent>.head{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;width:100%!important;gap:10px!important}
+html body #view-account .overviewcontent>.head h3{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important}
+html body #view-account .weeklyoverview{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:8px!important;width:100%!important;min-width:0!important}
+html body #view-account .weeklyitem{width:auto!important;min-width:0!important}
+html body #view-account .weeklyitemhead,html body #view-account .weeklytitle{min-width:0!important;white-space:normal!important;word-break:normal!important;overflow-wrap:normal!important}
+html body .app>.footer{grid-column:1/-1!important;justify-self:center!important;width:100%!important;max-width:920px!important;display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+@media(max-width:1050px){
+ html body .app{grid-template-columns:repeat(8,minmax(0,1fr))!important;width:calc(100% - 20px)!important}
+ html body .app>.clockcard{grid-column:span 4!important}
+ html body #view-account{grid-template-columns:repeat(8,minmax(0,1fr))!important}
+ html body #view-account>.head{grid-column:span 2!important}
+ html body #view-account>.stats{grid-column:span 6!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html body #view-account>.layout{grid-template-columns:minmax(230px,290px) minmax(0,1fr)!important}
+ html body #view-account .weeklyoverview{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+ html body .app{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:calc(100% - 16px)!important;padding:8px 0 18px!important}
+ html body .app>.top{grid-column:1/-1!important;flex-wrap:wrap!important}
+ html body .app>.clockcard{grid-column:span 1!important;flex-direction:column!important;align-items:stretch!important}
+ html body #view-account{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html body #view-account>.head,html body #view-account>.stats,html body #view-account>.layout{grid-column:1/-1!important}
+ html body #view-account>.stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html body #view-account>.layout{grid-template-columns:1fr!important}
+ html body #view-account .weeklyoverview{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
