@@ -545,8 +545,14 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
  .weeklyoverview{grid-template-columns:minmax(0,1fr)!important}
 }
 
+
+/* HZM — teste sem os cartões de estatísticas superiores */
+.stats{display:none!important}
+.brand h1{font-size:14px!important}
+.brand .logo{width:32px!important;height:32px!important;flex-basis:32px!important}
+
 </style></head><body><main class="app">
-<header class="top"><div class="brand"><div class="logo">HZM</div><div><h1>HZM Soluções</h1><p>Central pessoal · Grand Chase Classic</p></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
+<header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
 <section class="clockcard" aria-label="Horário de Brasília e contagem para o reset"><div class="clockmain"><div class="clockinfo"><div class="clocklabel">Horário de Brasília</div><div class="clockline"><div class="clocktime" id="brasilia-time">--:--:--</div><div class="clockdate" id="brasilia-date">Carregando data...</div></div></div></div><div class="resetbox"><div class="resetlabel">Próximo reset semanal</div><div class="resetcount" id="reset-countdown">Calculando...</div><div class="resetnote" id="reset-message">Quarta-feira, às 03h (horário de Brasília)</div></div></section>
 <section class="view active" id="view-account">
