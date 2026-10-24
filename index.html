@@ -666,6 +666,35 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 .weeklyportrait-wrap.character-order-drop-target .weeklyportrait{filter:brightness(1.12)!important}
 
 
+
+/* Cabeçalho informativo em cartões compactos, sem faixas de ponta a ponta. */
+@media(min-width:761px){
+ body{--top-card-gap:8px}
+ body .app{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:10px 12px 24px!important}
+ body .app>.top{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:nowrap!important;width:100%!important;margin:0 0 8px!important;padding:6px 10px!important;min-height:44px!important}
+ body .app>.clockcard{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(100%,680px)!important;max-width:680px!important;margin:0 0 8px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+ body .app>.clockcard .clockmain,body .app>.clockcard .resetbox{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:3px!important;min-width:0!important;width:auto!important;min-height:66px!important;padding:9px 11px!important;border:1px solid #493461!important;border-radius:10px!important;background:#171020ef!important}
+ body .app>.clockcard .clocklabel,body .app>.clockcard .resetlabel{font-size:9px!important;line-height:1.2!important;letter-spacing:.08em!important}
+ body .app>.clockcard .clocktime{font-size:21px!important;line-height:1.1!important;margin:2px 0 0!important}
+ body .app>.clockcard .clockline{display:flex!important;align-items:baseline!important;gap:7px!important;flex-wrap:wrap!important}
+ body .app>.clockcard .clockdate,body .app>.clockcard .resetnote{font-size:10px!important;line-height:1.3!important;white-space:normal!important}
+ body .app>.clockcard .resetcount{font-size:18px!important;line-height:1.15!important;white-space:normal!important;margin:1px 0!important}
+ body .app>#view-account>.head{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap!important;margin:4px 0 8px!important;padding:10px 12px!important;border:1px solid #493461!important;border-radius:10px!important;background:#171020ef!important}
+ body .app>#view-account>.head h2{font-size:19px!important;line-height:1.2!important}
+ body .app>#view-account>.head p{font-size:11px!important;margin:2px 0 0!important}
+ body .app>#view-account>.stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;width:100%!important;max-width:none!important;margin:0 0 10px!important}
+ body .app>#view-account>.stats .card{min-width:0!important;padding:10px 12px!important}
+ body .app>#view-account .statvalue{font-size:22px!important;line-height:1.1!important;margin-top:3px!important}
+ body .app>#view-account .globalprogress{height:5px!important;margin-top:7px!important}
+ body .app>#view-account>.layout{display:grid!important;grid-template-columns:minmax(280px,330px) minmax(0,1fr)!important;gap:10px!important;width:100%!important;margin:0!important}
+}
+@media(max-width:760px){
+ body .app>.clockcard{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;width:100%!important;margin:0 0 8px!important}
+ body .app>.clockcard .clockmain,body .app>.clockcard .resetbox{min-width:0!important;padding:8px!important;border:1px solid #493461!important;border-radius:9px!important;background:#171020ef!important}
+ body .app>.clockcard .resetbox{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important}
+ body .app>.clockcard .resetcount{font-size:15px!important}
+ body .app>#view-account>.head{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;flex-wrap:wrap!important}
+}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
