@@ -671,6 +671,25 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 
 /* Oculta somente o cartão de progresso semanal, preservando os cálculos internos. */
 .stats>.progressstat{display:none!important}
+
+/* PRÉVIA DO REDESIGN: cartões amplos e retratos com foco no rosto. */
+.weeklyoverview{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
+.weeklyitem{border-radius:14px;border-color:#493461;background:linear-gradient(155deg,#1b1229,#100b1b)}
+.weeklyitemhead{padding:15px 16px}
+.weeklyitemhead .weeklytitle strong{font-size:15px}
+.weeklyitem>.progress{margin:0 16px 14px}
+.weeklyitembody{padding:0 16px 16px}
+.weeklyportraits{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px!important;justify-items:center;align-items:start}
+.weeklyportrait-wrap{width:100%;justify-content:center}
+.weeklyportrait{width:100%!important;max-width:104px;height:auto!important;aspect-ratio:1/1;flex-basis:auto!important;border-radius:12px!important;overflow:hidden;background:#211631}
+.weeklyportrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.75)!important;transform-origin:50% 18%!important}
+.weeklyportrait.completed{border-color:#b58cff;box-shadow:0 0 0 2px #8e5bd344,0 0 14px #9a62d52b}
+.weeklyportrait.pending{opacity:.8;filter:grayscale(.35)}
+.weeklyportrait.pending img{filter:grayscale(.35) brightness(.85)}
+.weeklyportrait-wrap::after{bottom:calc(100% + 7px)}
+@media(min-width:1000px){.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))}.weeklyportrait{max-width:110px}}
+@media(max-width:799px){.weeklyoverview{grid-template-columns:1fr}.weeklyportraits{grid-template-columns:repeat(4,minmax(0,1fr))}.weeklyportrait{max-width:88px}}
+@media(max-width:480px){.weeklyoverview{gap:12px}.weeklyitemhead{padding:12px}.weeklyitem>.progress{margin:0 12px 12px}.weeklyitembody{padding:0 12px 12px}.weeklyportraits{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px!important}.weeklyportrait{max-width:74px;border-radius:9px!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
