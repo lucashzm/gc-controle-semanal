@@ -695,15 +695,15 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 .weeklyoverview{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
 .weeklyportraits{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:7px!important;width:100%!important;justify-items:stretch!important;align-items:start!important}
 .weeklyportrait-wrap{width:100%!important;min-width:0!important;justify-content:center!important}
-.weeklyportrait{width:100%!important;max-width:96px!important;height:auto!important;aspect-ratio:1/1!important;flex:initial!important;border-radius:10px!important;overflow:hidden!important}
+.weeklyportrait{width:100%!important;max-width:144px!important;height:auto!important;aspect-ratio:1/1!important;flex:initial!important;border-radius:10px!important;overflow:hidden!important}
 .weeklyportrait img{width:100%!important;height:100%!important;object-fit:cover!important;transform:scale(1.5)!important;transform-origin:50% 18%!important}
 .characterface img,.portrait img{object-fit:cover!important;transform:scale(1.35);transform-origin:50% 18%}
 .weeklyportrait.completed{border-color:#b58cff;box-shadow:0 0 0 2px #8e5bd344,0 0 14px #9a62d52b}
 .weeklyportrait.pending{opacity:.82;filter:grayscale(.3)}
 .weeklyportrait.pending img{filter:grayscale(.3) brightness(.88)}
-@media(min-width:1000px){.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important}.weeklyportrait{max-width:96px!important}}
-@media(max-width:799px){.weeklyoverview{grid-template-columns:1fr}.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important}.weeklyportrait{max-width:66px!important;border-radius:8px!important}}
-@media(max-width:480px){.weeklyoverview{gap:12px}.weeklyitemhead{padding:12px}.weeklyitem>.progress{margin:0 12px 12px}.weeklyitembody{padding:0 12px 12px}.weeklyportraits{gap:4px!important}.weeklyportrait{max-width:66px!important}}
+@media(min-width:1000px){.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important}.weeklyportrait{max-width:144px!important}}
+@media(max-width:799px){.weeklyoverview{grid-template-columns:1fr}.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important}.weeklyportrait{max-width:80px!important;border-radius:8px!important}}
+@media(max-width:480px){.weeklyoverview{gap:12px}.weeklyitemhead{padding:12px}.weeklyitem>.progress{margin:0 12px 12px}.weeklyitembody{padding:0 12px 12px}.weeklyportraits{gap:4px!important}.weeklyportrait{max-width:80px!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
