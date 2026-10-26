@@ -988,7 +988,11 @@ html[data-color-theme="brown"] .resetbox{border-color:#d9c4b5!important;backgrou
 .supportmodal{max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain}
 .feedbackform{display:grid;gap:10px;margin-top:10px}
 .feedbackform label{display:block;color:var(--text);font-size:12px;font-weight:700;margin-bottom:5px}
-.feedbackform select,.feedbackform textarea{display:block;width:100%;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--text);font:inherit;font-size:13px;padding:10px 11px;outline:none}
+.feedbackform select,.feedbackform textarea{display:block;width:100%;border:1px solid var(--line);border-radius:9px;background:var(--panel,#251837);color:var(--text);font:inherit;font-size:13px;padding:10px 11px;outline:none;color-scheme:dark}
+html[data-color-theme="white"] .feedbackform select,html[data-color-theme="white"] .feedbackform textarea,html[data-color-theme="beige"] .feedbackform select,html[data-color-theme="beige"] .feedbackform textarea,html[data-color-theme="brown"] .feedbackform select,html[data-color-theme="brown"] .feedbackform textarea{background:#fffdf8;color:#352d25;border-color:#cbbda8;color-scheme:light}
+html[data-color-theme="black"] .feedbackform select,html[data-color-theme="black"] .feedbackform textarea{background:#1b1b1b;color:#f4f4f4;border-color:#555;color-scheme:dark}
+.feedbackform select option{background:#fffdf8;color:#352d25}
+html[data-color-theme="black"] .feedbackform select option{background:#1b1b1b;color:#f4f4f4}
 .feedbackform select:focus,.feedbackform textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 20%,transparent)}
 .feedbackform textarea{min-height:130px;resize:vertical;line-height:1.5}
 .feedbackform .hidden{display:none}
