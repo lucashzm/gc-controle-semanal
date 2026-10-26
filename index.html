@@ -781,6 +781,10 @@ html[data-color-theme="brown"] .btn,html[data-color-theme="brown"] .fontselect{b
 .markedcoloroption{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #493461;border-radius:9px;background:#171020;color:var(--text);font-size:11px;cursor:pointer}
 .markedcoloroption.active{border-color:#c4a6ff;box-shadow:0 0 0 2px #8e5bd344}
 .markedcolorswatch{width:17px;height:17px;flex:0 0 17px;border-radius:5px;border:1px solid #ffffff66}
+
+/* A cor escolhida controla também a borda externa dos personagens concluídos */
+.weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}
+@media(min-width:800px){.weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
