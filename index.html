@@ -712,6 +712,10 @@ html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation
 @media(min-width:1000px){.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important}.weeklyportrait{max-width:144px!important}}
 @media(max-width:799px){.weeklyoverview{grid-template-columns:1fr}.weeklyportraits{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important}.weeklyportrait{max-width:80px!important;border-radius:8px!important}}
 @media(max-width:480px){.weeklyoverview{gap:12px}.weeklyitemhead{padding:12px}.weeklyitem>.progress{margin:0 12px 12px}.weeklyitembody{padding:0 12px 12px}.weeklyportraits{gap:4px!important}.weeklyportrait{max-width:80px!important}}
+
+/* Permite que as dicas dos personagens ultrapassem os limites do cartão */
+#weeklyoverview .weeklyitem{overflow:visible!important}
+#weeklyoverview .weeklyitembody{overflow:visible!important}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
