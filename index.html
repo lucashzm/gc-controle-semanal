@@ -924,6 +924,24 @@ html[data-color-theme="brown"] .colorthemeshead h2{color:#49372d!important}
 .weeklyportrait.completed img{filter:none!important}
 @media(min-width:800px){.weeklyportrait.completed,.weeklyportrait-wrap .weeklyportrait.completed,.weeklyportraits .weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;outline:1px solid var(--marked-border,#68458f)!important;outline-offset:0!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}}
 @media(min-width:800px){.weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}}
+
+/* Mantém a barra do relógio alinhada ao tema selecionado. */
+html[data-color-theme="black"] .clockcard{background:#151515!important;border-color:#383838!important;color:#f4f4f4!important}
+html[data-color-theme="black"] .clocktime,html[data-color-theme="black"] .resetcount{color:#f4f4f4!important}
+html[data-color-theme="black"] .clocklabel,html[data-color-theme="black"] .clockdate,html[data-color-theme="black"] .resetlabel,html[data-color-theme="black"] .resetnote{color:#b9b9b9!important}
+html[data-color-theme="black"] .resetbox{border-color:#424242!important;background:transparent!important}
+html[data-color-theme="white"] .clockcard{background:#fff!important;border-color:#dedede!important;color:#202020!important}
+html[data-color-theme="white"] .clocktime,html[data-color-theme="white"] .resetcount{color:#202020!important}
+html[data-color-theme="white"] .clocklabel,html[data-color-theme="white"] .clockdate,html[data-color-theme="white"] .resetlabel,html[data-color-theme="white"] .resetnote{color:#666!important}
+html[data-color-theme="white"] .resetbox{border-color:#d5d5d5!important;background:transparent!important}
+html[data-color-theme="beige"] .clockcard{background:#fff8ec!important;border-color:#ded0b9!important;color:#40362a!important}
+html[data-color-theme="beige"] .clocktime,html[data-color-theme="beige"] .resetcount{color:#8c6b42!important}
+html[data-color-theme="beige"] .clocklabel,html[data-color-theme="beige"] .clockdate,html[data-color-theme="beige"] .resetlabel,html[data-color-theme="beige"] .resetnote{color:#796b58!important}
+html[data-color-theme="beige"] .resetbox{border-color:#ded0b9!important;background:transparent!important}
+html[data-color-theme="brown"] .clockcard{background:#f5e7dc!important;border-color:#d9c4b5!important;color:#49372d!important}
+html[data-color-theme="brown"] .clocktime,html[data-color-theme="brown"] .resetcount{color:#81563f!important}
+html[data-color-theme="brown"] .clocklabel,html[data-color-theme="brown"] .clockdate,html[data-color-theme="brown"] .resetlabel,html[data-color-theme="brown"] .resetnote{color:#80695b!important}
+html[data-color-theme="brown"] .resetbox{border-color:#d9c4b5!important;background:transparent!important}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo">GC</div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">DM Sans + Outfit</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="nunito-sans">Nunito Sans</option><option value="outfit">Outfit</option><option value="rubik">Rubik</option><option value="sora">Sora</option><option value="manrope">Manrope</option><option value="plus-jakarta">Plus Jakarta Sans</option><option value="urbanist">Urbanist</option><option value="figtree">Figtree</option></select></div></header>
 
