@@ -980,7 +980,9 @@ html[data-color-theme="brown"] .resetbox{border-color:#d9c4b5!important;backgrou
 /* Apoio ao projeto: botão discreto no rodapé, sem criar uma nova faixa. */
 .support-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:0 0 10px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font:600 12px/1.2 inherit;cursor:pointer;transition:color .18s,border-color .18s,background .18s}
 .support-trigger:hover{color:var(--text);border-color:var(--accent);background:#b58cff12}
-.support-trigger svg{width:15px;height:15px;flex:none}
+.support-trigger svg{width:17px;height:17px;flex:none;stroke:var(--accent);stroke-width:2.2;filter:drop-shadow(0 0 2px color-mix(in srgb,var(--accent) 35%,transparent))}
+.support-trigger{border-color:var(--accent);color:var(--accent)}
+.support-trigger:hover svg{stroke:var(--text)}
 .supportmodal p{color:var(--muted);font-size:13px;line-height:1.6;margin:8px 0 12px}
 .supportmodal h3{font-size:13px;margin:14px 0 4px;color:var(--text)}
 .supportmodal .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
