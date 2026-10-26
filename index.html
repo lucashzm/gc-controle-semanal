@@ -747,7 +747,7 @@ const challengeList=['VOID','VOID 4','FORNALHA INFERNAL','ALTAR DA RUÍNA','TORR
 function challengeIcon(name){const icons={
 'VOID':{label:'Void 1, 2 e 3',art:'<img src="desafios/void.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;border-radius:4px">'},
 'VOID 4':{label:'Void 4',art:'<img src="desafios/void4.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;border-radius:4px">'},
-'FORNALHA INFERNAL':{label:'Fornalha Infernal',art:'<img src="desafios/fornalha.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;border-radius:4px">'},
+'FORNALHA INFERNAL':{label:'Fogo da Fornalha Infernal',emoji:'🔥'},
 'ALTAR DA RUÍNA':{label:'Altar da Ruína',art:'<img src="desafios/altar.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;border-radius:4px">'},
 'TORRE DAS ILUSÕES':{label:'Torre das Ilusões',art:'<img src="desafios/torre.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;border-radius:4px">'}
 };const item=icons[name]||{label:name,emoji:'◆'};const cls=({'VOID':'void','VOID 4':'void4','FORNALHA INFERNAL':'fornalha','ALTAR DA RUÍNA':'altar','TORRE DAS ILUSÕES':'torre'}[name]||'default');return '<span class="challengeicon challengeicon-'+cls+'" title="'+item.label+'" aria-label="'+item.label+'">'+(item.art||'<span class="challengeemoji" aria-hidden="true">'+item.emoji+'</span>')+'</span>'}
