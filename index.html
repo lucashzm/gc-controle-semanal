@@ -784,6 +784,15 @@ html[data-color-theme="brown"] .btn,html[data-color-theme="brown"] .fontselect{b
 
 /* A cor escolhida controla também a borda externa dos personagens concluídos */
 
+
+/* As barras de progresso usam a mesma cor configurada para destacar personagens concluídos. */
+html{--marked-progress:var(--marked-color,#a779e0)}
+.progress>span,
+.progress .progressfill,
+.globalprogress span,
+#globalprogressfill,
+.weeklyitem>.progress span{background:var(--marked-progress)!important}
+.progress>span{background-image:none!important}
 /* Os diálogos acompanham o tema geral escolhido, não apenas a página ao fundo. */
 html[data-color-theme="black"] .fontpickermodal,
 html[data-color-theme="black"] .colorthemesmodal,
