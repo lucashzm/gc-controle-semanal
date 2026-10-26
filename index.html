@@ -962,7 +962,17 @@ html[data-color-theme="brown"] .resetbox{border-color:#d9c4b5!important;backgrou
 .illustration-gallery-close{flex:0 0 auto;width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:#ffffff0a;color:var(--text);font-size:24px;line-height:1;cursor:pointer}
 .illustration-gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:16px;overflow:auto}
 .illustration-gallery-item{min-width:0;margin:0;padding:10px;border:1px solid #ffffff17;border-radius:12px;background:#ffffff05;text-align:center}
-.illustration-gallery-item img{display:block;width:100%;height:132px;object-fit:contain}
+
+.illustration-gallery-item img{display:block;width:100%;height:132px;object-fit:contain;cursor:zoom-in}
+.illustration-gallery-item img:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.illustration-lightbox{position:fixed;inset:0;z-index:1300;display:grid;place-items:center;padding:22px}
+.illustration-lightbox.hidden{display:none}
+.illustration-lightbox-backdrop{position:absolute;inset:0;background:#030208ed;backdrop-filter:blur(7px)}
+.illustration-lightbox-panel{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;width:min(1100px,100%);max-height:94dvh}
+.illustration-lightbox-image{display:block;max-width:100%;max-height:calc(94dvh - 62px);object-fit:contain;border-radius:10px;box-shadow:0 16px 60px #000a}
+.illustration-lightbox-caption{color:#fff;text-align:center;font-weight:700;text-shadow:0 2px 8px #000}
+.illustration-lightbox-close{position:absolute;right:0;top:0;z-index:1;width:40px;height:40px;border:1px solid #ffffff66;border-radius:12px;background:#16121de8;color:#fff;font-size:26px;cursor:pointer}
+
 .illustration-gallery-item figcaption{margin-top:7px;font-size:.82rem;font-weight:700;color:var(--text)}
 @media(max-width:760px){.illustration-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:12px}.illustration-gallery-item{padding:7px}.illustration-gallery-item img{height:116px}}
 @media(max-width:460px){.illustration-gallery{padding:9px}.illustration-gallery-modal{max-height:92dvh;border-radius:14px}.illustration-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.illustration-gallery-item img{height:125px}}
@@ -995,6 +1005,14 @@ html[data-color-theme="brown"] .resetbox{border-color:#d9c4b5!important;backgrou
     </header>
     <div class="illustration-gallery-grid" id="illustration-gallery-grid"></div>
   </section>
+  <div class="illustration-lightbox hidden" id="illustration-lightbox" role="dialog" aria-modal="true" aria-label="Ilustração ampliada">
+    <div class="illustration-lightbox-backdrop" id="illustration-lightbox-backdrop"></div>
+    <section class="illustration-lightbox-panel">
+      <button type="button" class="illustration-lightbox-close" id="close-illustration-lightbox" aria-label="Fechar imagem ampliada">×</button>
+      <img class="illustration-lightbox-image" id="illustration-lightbox-image" alt="">
+      <div class="illustration-lightbox-caption" id="illustration-lightbox-caption"></div>
+    </section>
+  </div>
 </div>
 <script>
 (function(){
@@ -1087,14 +1105,23 @@ const markedColorKey='hzmsolucoes-marked-color-v1';const markedColors=[{id:'purp
 const illustrationGalleryFiles=['181414','181432','181442','181450','181457','181509','181515','181522','181531','181540','181548','181554','181600','181613','181618','181627','181636','181646','181656','181704','181710','181717','181727','181734','181742'];
 const illustrationGalleryNames=['Elesis','Lire','Arme','Lass','Ryan','Ronan','Amy','Jin','Sieghart','Mari','Dio','Zero','Rey','Lupus','Lin','Azin','Holy','Edel','Veigas','Uno','Decanee','Ai','Kallia','Iris','Ereb'];
 const illustrationGalleryGrid=document.querySelector('#illustration-gallery-grid');
-illustrationGalleryFiles.forEach((time,index)=>{const figure=document.createElement('figure');figure.className='illustration-gallery-item';const img=document.createElement('img');img.src='imagens/Screenshot%202026-10-25%20'+time+'.png';img.alt='Ilustração de '+illustrationGalleryNames[index];img.loading='lazy';const caption=document.createElement('figcaption');caption.textContent=illustrationGalleryNames[index];figure.append(img,caption);illustrationGalleryGrid.appendChild(figure)});
+illustrationGalleryFiles.forEach((time,index)=>{const figure=document.createElement('figure');figure.className='illustration-gallery-item';const img=document.createElement('img');img.src='imagens/Screenshot%202026-10-25%20'+time+'.png';img.alt='Ilustração de '+illustrationGalleryNames[index];img.loading='lazy';img.decoding='async';img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Ampliar ilustração de '+illustrationGalleryNames[index]);const caption=document.createElement('figcaption');caption.textContent=illustrationGalleryNames[index];figure.append(img,caption);illustrationGalleryGrid.appendChild(figure)});
+const illustrationLightbox=document.querySelector('#illustration-lightbox');
+const illustrationLightboxImage=document.querySelector('#illustration-lightbox-image');
+const illustrationLightboxCaption=document.querySelector('#illustration-lightbox-caption');
+const openIllustrationLightbox=img=>{illustrationLightboxImage.src=img.src;illustrationLightboxImage.alt=img.alt;illustrationLightboxCaption.textContent=img.alt.replace('Ilustração de ','');illustrationLightbox.classList.remove('hidden');document.querySelector('#close-illustration-lightbox').focus()};
+const closeIllustrationLightbox=()=>{illustrationLightbox.classList.add('hidden');illustrationLightboxImage.removeAttribute('src')};
+illustrationGalleryGrid.addEventListener('click',event=>{const img=event.target.closest('img');if(img)openIllustrationLightbox(img)});
+illustrationGalleryGrid.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('img[role="button"]')){event.preventDefault();openIllustrationLightbox(event.target)}});
+document.querySelector('#close-illustration-lightbox').addEventListener('click',closeIllustrationLightbox);
+document.querySelector('#illustration-lightbox-backdrop').addEventListener('click',closeIllustrationLightbox);
 const illustrationGallery=document.querySelector('#illustration-gallery');
 const openIllustrationGallery=()=>{illustrationGallery.classList.remove('hidden');document.querySelector('#close-illustration-gallery').focus()};
 const closeIllustrationGallery=()=>{illustrationGallery.classList.add('hidden');document.querySelector('#open-illustration-gallery').focus()};
 document.querySelector('#open-illustration-gallery').addEventListener('click',openIllustrationGallery);
 document.querySelector('#close-illustration-gallery').addEventListener('click',closeIllustrationGallery);
 document.querySelector('#illustration-gallery-backdrop').addEventListener('click',closeIllustrationGallery);
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!illustrationGallery.classList.contains('hidden'))closeIllustrationGallery()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!illustrationLightbox.classList.contains('hidden'))closeIllustrationLightbox();else if(event.key==='Escape'&&!illustrationGallery.classList.contains('hidden'))closeIllustrationGallery()});
 
 ensureCharacterRoster();renderAll();updateBrasiliaClock();setInterval(updateBrasiliaClock,1000);
 })();
