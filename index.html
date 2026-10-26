@@ -787,6 +787,12 @@ html[data-color-theme="brown"] .btn,html[data-color-theme="brown"] .fontselect{b
 .weeklyportrait.completed,
 .weeklyportrait-wrap .weeklyportrait.completed,
 .weeklyportraits .weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;outline:1px solid var(--marked-border,#68458f)!important;outline-offset:0!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}
+/* Personagens ainda não selecionados ficam mais discretos para destacar os concluídos. */
+.weeklyportrait.pending{opacity:.58!important;filter:grayscale(.58) brightness(.78)!important}
+.weeklyportrait.pending img{filter:grayscale(.58) brightness(.78) saturate(.78)!important}
+.weeklyportrait.completed{opacity:1!important;filter:none!important}
+.weeklyportrait.completed img{filter:none!important}
+
 .weeklyportrait.completed img{filter:none!important}
 @media(min-width:800px){.weeklyportrait.completed,.weeklyportrait-wrap .weeklyportrait.completed,.weeklyportraits .weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;outline:1px solid var(--marked-border,#68458f)!important;outline-offset:0!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}}
 @media(min-width:800px){.weeklyportrait.completed{border:2px solid var(--marked-color,#a779e0)!important;box-shadow:0 0 0 1px var(--marked-border,#68458f),0 0 8px var(--marked-glow,#9a62d52e)!important}}
