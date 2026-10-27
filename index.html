@@ -1370,6 +1370,30 @@ html[data-color-theme] .resetnote{grid-column:1/-1!important;grid-row:2!importan
 }
 </style>
 
+
+<style id="hzm-theme-personality-pass">
+html[data-color-theme="purple"]{--text:#f3eafb;--muted:#c4afd9;--accent:#c084fc;--line:#50386b;--panel:#2a1a3d;--surface:#171020;--soft:#21132f;--border:#8b5fb5;--progress-start:#8b5cf6;--progress-end:#e9a8ff;--button-text:#fff;--label-color:#c4a0ee;--heading-color:#e4c6ff;--card-glow:#8b5cf61c}
+html[data-color-theme="black"]{--text:#f1f1f1;--muted:#bdbdbd;--accent:#c4c4c4;--line:#424242;--panel:#242424;--surface:#111;--soft:#1a1a1a;--border:#555;--progress-start:#777;--progress-end:#dedede;--button-text:#111;--label-color:#aaa;--heading-color:#f0f0f0;--card-glow:#fff08}
+html[data-color-theme="white"]{--text:#242424;--muted:#666;--accent:#444;--line:#d6d6d6;--panel:#fff;--surface:#f4f4f4;--soft:#eaeaea;--border:#c9c9c9;--progress-start:#444;--progress-end:#929292;--button-text:#fff;--label-color:#555;--heading-color:#252525;--card-glow:#00000008}
+html[data-color-theme="beige"]{--text:#40362a;--muted:#796b58;--accent:#a77b43;--line:#d8c6a8;--panel:#fff8ec;--surface:#f1e5d1;--soft:#e8dbc3;--border:#c5ad87;--progress-start:#a77b43;--progress-end:#d4b36e;--button-text:#fff;--label-color:#786044;--heading-color:#75502b;--card-glow:#9a76481c}
+html[data-color-theme="blue"]{--text:#e8f5ff;--muted:#a8c4dc;--accent:#38bdf8;--line:#214765;--panel:#102b46;--surface:#071525;--soft:#0b2036;--border:#286083;--progress-start:#0284c7;--progress-end:#67e8f9;--button-text:#041725;--label-color:#7dd3fc;--heading-color:#a5e6ff;--card-glow:#38bdf81a}
+html[data-color-theme="green"]{--text:#e5fff5;--muted:#a7d4c2;--accent:#34d399;--line:#245a49;--panel:#12372c;--surface:#071b17;--soft:#0b241d;--border:#28765b;--progress-start:#059669;--progress-end:#6ee7b7;--button-text:#06251b;--label-color:#80d9b6;--heading-color:#9af0cf;--card-glow:#34d3991a}
+html[data-color-theme="red"]{--text:#fff0f3;--muted:#e0b1bc;--accent:#fb7185;--line:#713044;--panel:#421723;--surface:#190910;--soft:#2a0e17;--border:#8f3b52;--progress-start:#be123c;--progress-end:#fb7185;--button-text:#fff;--label-color:#e99aaa;--heading-color:#ffb4c1;--card-glow:#fb71851a}
+html[data-color-theme="gold"]{--text:#fff6d9;--muted:#d2c092;--accent:#eabf55;--line:#665126;--panel:#382a12;--surface:#171108;--soft:#21190b;--border:#8a6b2d;--progress-start:#a16207;--progress-end:#f5d477;--button-text:#211606;--label-color:#d8b96c;--heading-color:#f5d477;--card-glow:#eabf551a}
+html[data-color-theme]{color-scheme:light dark}
+html[data-color-theme] .card{box-shadow:0 10px 30px var(--card-glow)!important}
+html[data-color-theme] .clocklabel,html[data-color-theme] .resetlabel,html[data-color-theme] .statlabel,html[data-color-theme] .field label,html[data-color-theme] .fonttoolslabel{color:var(--label-color)!important}
+html[data-color-theme] .head h2,html[data-color-theme] .weeklyoverviewtitle,html[data-color-theme] .weeklyitemhead .weeklytitle strong,html[data-color-theme] .brand h1{color:var(--heading-color)!important}
+html[data-color-theme] .clocktime,html[data-color-theme] .resetcount,html[data-color-theme] .statvalue{color:var(--accent)!important}
+html[data-color-theme="white"] .clocktime,html[data-color-theme="white"] .resetcount,html[data-color-theme="white"] .statvalue,html[data-color-theme="beige"] .clocktime,html[data-color-theme="beige"] .resetcount,html[data-color-theme="beige"] .statvalue{color:var(--heading-color)!important}
+html[data-color-theme] .btn.primarybtn{background:linear-gradient(135deg,var(--progress-start),var(--progress-end))!important}
+html[data-color-theme] .overviewchevron,html[data-color-theme] .pickchevron{color:var(--accent)!important}
+html[data-color-theme] .weeklyportrait.completed{box-shadow:0 0 0 1px var(--marked-border,var(--accent)),0 0 8px var(--card-glow)!important}
+html[data-color-theme="white"] .card,html[data-color-theme="beige"] .card{box-shadow:0 8px 24px #6b553018!important}
+html[data-color-theme="white"] .head h2,html[data-color-theme="white"] .brand h1,html[data-color-theme="white"] .weeklyitemhead .weeklytitle strong{color:#242424!important}
+html[data-color-theme="beige"] .head h2,html[data-color-theme="beige"] .brand h1,html[data-color-theme="beige"] .weeklyitemhead .weeklytitle strong{color:#40362a!important}
+</style>
+
 </head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
