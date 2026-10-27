@@ -1253,6 +1253,69 @@ html[data-color-theme] .feedbackselectmenu button:hover,
 html[data-color-theme] .feedbackselectmenu button:focus-visible,
 html[data-color-theme] .feedbackselectmenu button[aria-selected=true]{background:color-mix(in srgb,var(--accent) 15%,var(--ui-panel))!important}
 
+
+/* Temas completos: cada opção define uma identidade visual, não uma única cor */
+html[data-color-theme="purple"]{--text:#f3eafb;--muted:#b6a9cc;--line:#44305f;--accent:#b98be8;--theme-surface:#171020;--theme-modal:linear-gradient(155deg,#251837,#100b1c);--theme-border:#75549a;--theme-soft:#130d20;--theme-highlight:#eadbff;--theme-button:linear-gradient(135deg,#8e5bd3,#6940a2);--theme-button-text:#fff}
+html[data-color-theme="black"]{--text:#f1f1f1;--muted:#b5b5b5;--line:#383838;--accent:#bdbdbd;--theme-surface:#101010;--theme-modal:linear-gradient(155deg,#202020,#0a0a0a);--theme-border:#505050;--theme-soft:#191919;--theme-highlight:#ffffff;--theme-button:linear-gradient(135deg,#414141,#242424);--theme-button-text:#fff}
+html[data-color-theme="white"]{--text:#202020;--muted:#626262;--line:#d8d8d8;--accent:#555;--theme-surface:#f3f3f3;--theme-modal:linear-gradient(155deg,#fff,#ededed);--theme-border:#c8c8c8;--theme-soft:#e7e7e7;--theme-highlight:#202020;--theme-button:linear-gradient(135deg,#555,#333);--theme-button-text:#fff}
+html[data-color-theme="beige"]{--text:#40362a;--muted:#796b58;--line:#ded0b9;--accent:#9a7648;--theme-surface:#eee1cb;--theme-modal:linear-gradient(155deg,#fff8ec,#e9dcc6);--theme-border:#c7b18e;--theme-soft:#e6d7bd;--theme-highlight:#684b2b;--theme-button:linear-gradient(135deg,#a88759,#76552f);--theme-button-text:#fffaf0}
+html[data-color-theme="blue"]{--text:#e8f5ff;--muted:#a8c4dc;--line:#214765;--accent:#38bdf8;--theme-surface:#091b2c;--theme-modal:linear-gradient(155deg,#102b43,#071525);--theme-border:#286083;--theme-soft:#0b2036;--theme-highlight:#7dd3fc;--theme-button:linear-gradient(135deg,#087ea4,#075985);--theme-button-text:#fff}
+html[data-color-theme="green"]{--text:#e5fff5;--muted:#a7d4c2;--line:#245a49;--accent:#34d399;--theme-surface:#091f19;--theme-modal:linear-gradient(155deg,#123b31,#071b17);--theme-border:#28765b;--theme-soft:#0b241d;--theme-highlight:#6ee7b7;--theme-button:linear-gradient(135deg,#16805d,#10553f);--theme-button-text:#fff}
+html[data-color-theme="red"]{--text:#fff0f3;--muted:#e0b1bc;--line:#713044;--accent:#fb7185;--theme-surface:#210b12;--theme-modal:linear-gradient(155deg,#4a1723,#190910);--theme-border:#8f3b52;--theme-soft:#2a0e17;--theme-highlight:#fda4af;--theme-button:linear-gradient(135deg,#b83250,#76172e);--theme-button-text:#fff}
+html[data-color-theme="gold"]{--text:#fff6d9;--muted:#d2c092;--line:#665126;--accent:#eabf55;--theme-surface:#171108;--theme-modal:linear-gradient(155deg,#493716,#171108);--theme-border:#8a6b2d;--theme-soft:#21190b;--theme-highlight:#f5d477;--theme-button:linear-gradient(135deg,#9b7424,#624613);--theme-button-text:#fff9e8}
+html[data-color-theme] .charpickermodal,
+html[data-color-theme] .fontpickermodal,
+html[data-color-theme] .colorthemesmodal,
+html[data-color-theme] .confirmmodal,
+html[data-color-theme] .detailmodal,
+html[data-color-theme] .supportmodal,
+html[data-color-theme] .statdetailmodal{background:var(--theme-modal)!important;border-color:var(--theme-border)!important;color:var(--text)!important}
+html[data-color-theme] .charpickerhead,
+html[data-color-theme] .charpickermodal>.charpickerhead,
+html[data-color-theme] .detailmodal>.detailhead{background:var(--theme-modal)!important;border-color:var(--line)!important}
+html[data-color-theme] .charpickermodal h2,
+html[data-color-theme] .charpickermodal p,
+html[data-color-theme] .detailmodal h2,
+html[data-color-theme] .detailmodal p,
+html[data-color-theme] .confirmmodal h2,
+html[data-color-theme] .confirmmodal p{color:var(--text)!important}
+html[data-color-theme] .charpickermodal p,
+html[data-color-theme] .detailmodal p,
+html[data-color-theme] .confirmmodal p{color:var(--muted)!important}
+html[data-color-theme] .charpickermodal .charactersearch,
+html[data-color-theme] .charpickermodal .characteroption,
+html[data-color-theme] .charpickermodal .pickerfilter,
+html[data-color-theme] .charpickermodal .pickerclose,
+html[data-color-theme] .detailmodal .detailcharacter,
+html[data-color-theme] .detailmodal .detailgroup,
+html[data-color-theme] .detailmodal .detailgrouphead,
+html[data-color-theme] .confirmmodal .pickerclose{background:var(--theme-surface)!important;color:var(--text)!important;border-color:var(--theme-border)!important}
+html[data-color-theme] .charpickermodal .characteroption.selected,
+html[data-color-theme] .charpickermodal .pickerfilter.active{background:var(--theme-soft)!important;border-color:var(--accent)!important;color:var(--text)!important;box-shadow:inset 0 0 0 1px var(--accent)!important}
+html[data-color-theme] .charpickermodal .characterstate,
+html[data-color-theme] .charpickermodal .characterstate.complete,
+html[data-color-theme] .charpickermodal .characterstate.inprogress{background:var(--theme-soft)!important;border-color:var(--theme-border)!important;color:var(--text)!important}
+html[data-color-theme] .charpickermodal .characterstate:before{background:var(--accent)!important}
+html[data-color-theme] .btn.primarybtn,
+html[data-color-theme] .btn.primarybtn:hover{background:var(--theme-button)!important;border-color:var(--theme-border)!important;color:var(--theme-button-text)!important}
+html[data-color-theme] .btn:not(.primarybtn),
+html[data-color-theme] .fontselect,
+html[data-color-theme] .characterpickbtn{background:var(--theme-surface)!important;color:var(--text)!important;border-color:var(--theme-border)!important}
+html[data-color-theme] .statvalue,
+html[data-color-theme] .clocktime,
+html[data-color-theme] .resetcount,
+html[data-color-theme] .pickchevron,
+html[data-color-theme] .fontprevieweyebrow,
+html[data-color-theme] .fontpickerpreview strong{color:var(--theme-highlight)!important}
+html[data-color-theme] .progress span,
+html[data-color-theme] .globalprogress span,
+html[data-color-theme] .fontpreviewbar span{background:linear-gradient(90deg,var(--accent),var(--theme-highlight))!important}
+html[data-color-theme="white"] .statvalue,
+html[data-color-theme="white"] .clocktime,
+html[data-color-theme="white"] .resetcount,
+html[data-color-theme="white"] .fontprevieweyebrow,
+html[data-color-theme="white"] .fontpickerpreview strong{color:#202020!important}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
