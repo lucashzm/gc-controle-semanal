@@ -1086,6 +1086,43 @@ html[data-color-theme] .fontpreviewbar span{background:var(--theme-highlight)!im
 html[data-color-theme] .colorthemeoption.active,html[data-color-theme] .fontoption.active{border-color:var(--theme-border)!important;box-shadow:0 0 0 1px var(--theme-border)!important}
 html[data-color-theme] .colorthemeshead h2,html[data-color-theme] .fontpickerhead h2{color:var(--text)!important}
 
+
+/* Refinamento visual: superfícies, seleções e janelas */
+:root{--ui-border:color-mix(in srgb,var(--text) 16%,transparent);--ui-surface:color-mix(in srgb,var(--text) 5%,var(--bg));--ui-surface-raised:color-mix(in srgb,var(--text) 8%,var(--bg));--ui-ring:color-mix(in srgb,var(--accent) 68%,white)}
+.card{border-color:var(--ui-border);border-radius:16px;box-shadow:0 12px 30px #00000020,inset 0 1px 0 color-mix(in srgb,var(--text) 5%,transparent);transition:border-color .2s,box-shadow .2s}
+.statcard{border-color:var(--ui-border)}
+.statcard:hover{border-color:var(--accent);box-shadow:0 14px 32px #00000026,0 0 0 1px color-mix(in srgb,var(--accent) 20%,transparent)}
+.check,.weeklyitem,.person,.detailcharacter,.characteroption,.colorthemeoption,.fontoption{border-color:var(--ui-border);transition:border-color .18s,background .18s,box-shadow .18s,transform .18s}
+.check{border-radius:11px;padding:11px}
+.check:hover,.characteroption:hover,.detailcharacter:hover{border-color:color-mix(in srgb,var(--accent) 65%,var(--ui-border))}
+.check:has(input:checked){border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--ui-surface))}
+.check:has(input:checked) .detailchallenge{color:var(--text)}
+.btn,.characterpickbtn,.pickerclose,.fontopenbtn{border-color:var(--ui-border);border-radius:10px;transition:transform .16s,border-color .16s,background .16s,box-shadow .16s}
+.btn:hover,.characterpickbtn:hover,.pickerclose:hover{border-color:var(--accent);box-shadow:0 4px 12px #00000018}
+.btn:active,.characterpickbtn:active,.pickerclose:active{transform:translateY(1px)}
+.btn.primarybtn{box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 18%,transparent)}
+.pickerfilter,.characterstate,.pill{border-color:var(--ui-border)}
+.pickerfilter.active,.characteroption.selected,.fontoption[aria-pressed=true],.colorthemeoption.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 42%,transparent);background:color-mix(in srgb,var(--accent) 13%,var(--ui-surface))}
+.characteroption.selected{transform:translateY(-1px)}
+.charactersearch,.field input,.field select,.field textarea{border-color:var(--ui-border);border-radius:10px;transition:border-color .18s,box-shadow .18s}
+.charactersearch:focus,.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.charpickermodal,.fontpickermodal,.colorthemesmodal,.confirmmodal,.detailmodal{border-color:color-mix(in srgb,var(--accent) 48%,var(--ui-border));border-radius:20px;box-shadow:0 28px 90px #0006,0 0 0 1px #ffffff08;backdrop-filter:blur(18px)}
+.charpickerbackdrop,.fontpickerbackdrop{backdrop-filter:blur(10px) saturate(115%)}
+.charpickerhead,.fontpickerhead,.colorthemeshead,.detailhead,.confirmmodalhead{padding-bottom:10px;border-bottom:1px solid var(--ui-border)}
+.fontpickerpreview,.colorthemespreview{border-color:var(--ui-border);border-radius:15px}
+.fontoption,.colorthemeoption{border-radius:13px;padding:12px}
+.fontoption:hover,.colorthemeoption:hover{transform:translateY(-2px);border-color:var(--accent)}
+.weeklyitem{border-radius:13px;box-shadow:0 4px 14px #00000010}
+.weeklyitemhead{transition:background .18s}
+.weeklyitemhead:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.overviewdraghandle{border-color:var(--ui-border);border-radius:9px}
+.overviewdraghandle:hover,.overviewdraghandle:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
+.progress{background:color-mix(in srgb,var(--text) 10%,var(--bg))}
+.progress span{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 78%,#5268d8),var(--accent))}
+button:focus-visible,[role=button]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ui-ring);outline-offset:3px}
+@media(max-width:560px){.charpickermodal,.fontpickermodal,.colorthemesmodal,.confirmmodal,.detailmodal{border-radius:18px;padding:15px}.card{border-radius:14px}.check{padding:10px}}
+@media(prefers-reduced-motion:reduce){.card,.check,.weeklyitem,.btn,.characterpickbtn,.pickerclose,.characteroption,.fontoption,.colorthemeoption{transition:none!important}}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
