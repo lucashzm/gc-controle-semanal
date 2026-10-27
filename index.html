@@ -1123,6 +1123,136 @@ button:focus-visible,[role=button]:focus-visible,input:focus-visible,select:focu
 @media(max-width:560px){.charpickermodal,.fontpickermodal,.colorthemesmodal,.confirmmodal,.detailmodal{border-radius:18px;padding:15px}.card{border-radius:14px}.check{padding:10px}}
 @media(prefers-reduced-motion:reduce){.card,.check,.weeklyitem,.btn,.characterpickbtn,.pickerclose,.characteroption,.fontoption,.colorthemeoption{transition:none!important}}
 
+
+/* Varredura final: remove cores roxas fixas dos componentes e usa a paleta ativa */
+html[data-color-theme]{
+  --ui-accent:var(--theme-border,var(--accent));
+  --ui-highlight:var(--theme-highlight,var(--text));
+  --ui-panel:var(--theme-surface,var(--bg));
+  --ui-modal:var(--theme-modal,var(--bg));
+  --ui-border:var(--theme-border,var(--line));
+  --ui-soft:var(--theme-soft,var(--bg));
+}
+html[data-color-theme] .statvalue,
+html[data-color-theme] .clocktime,
+html[data-color-theme] .resetcount,
+html[data-color-theme] .pickchevron,
+html[data-color-theme] .fontprevieweyebrow,
+html[data-color-theme] .fontpickerpreview strong,
+html[data-color-theme] .colorthemespreview strong{color:var(--ui-highlight)!important}
+html[data-color-theme] .globalprogress,
+html[data-color-theme] .progress{background:var(--ui-soft)!important}
+html[data-color-theme] .globalprogress span,
+html[data-color-theme] .progress span{background:linear-gradient(90deg,var(--accent),var(--ui-highlight))!important}
+html[data-color-theme] .statcard:hover,
+html[data-color-theme] .statcard:focus-visible,
+html[data-color-theme] .check:hover,
+html[data-color-theme] .check:has(input:checked),
+html[data-color-theme] .check:has(input:checked) .detailchallenge,
+html[data-color-theme] .weeklyitem.dragging,
+html[data-color-theme] .overviewdraghandle:hover,
+html[data-color-theme] .overviewdraghandle:focus-visible{border-color:var(--ui-accent)!important}
+html[data-color-theme] .check:has(input:checked){background:color-mix(in srgb,var(--accent) 12%,var(--ui-panel))!important}
+html[data-color-theme] .check:has(input:checked) .detailchallenge{color:var(--text)!important}
+html[data-color-theme] .btn.primarybtn,
+html[data-color-theme] .btn.primarybtn:hover{background:linear-gradient(135deg,var(--accent),var(--ui-accent))!important;border-color:var(--ui-accent)!important;color:var(--text)!important}
+html[data-color-theme] .statcard:focus-visible,
+html[data-color-theme] .btn:focus-visible,
+html[data-color-theme] .characterpickbtn:focus-visible,
+html[data-color-theme] .characteroption:focus-visible,
+html[data-color-theme] .pickerfilter:focus-visible,
+html[data-color-theme] .pickerclose:focus-visible,
+html[data-color-theme] .weeklyitemhead:focus-visible,
+html[data-color-theme] button:focus-visible,
+html[data-color-theme] [role=button]:focus-visible{outline-color:var(--ui-highlight)!important}
+html[data-color-theme] .person,
+html[data-color-theme] .portrait,
+html[data-color-theme] .challengeicon,
+html[data-color-theme] .weeklyportrait:not(.completed),
+html[data-color-theme] .characterface,
+html[data-color-theme] .characterpickbtn,
+html[data-color-theme] .pickerclose,
+html[data-color-theme] .charactersearch,
+html[data-color-theme] .pickerfilter,
+html[data-color-theme] .characteroption,
+html[data-color-theme] .characterstate,
+html[data-color-theme] .fontselect,
+html[data-color-theme] .fontoption,
+html[data-color-theme] .fontpickerpreview,
+html[data-color-theme] .colorthemeoption,
+html[data-color-theme] .markedcoloroption,
+html[data-color-theme] .detailcharacter,
+html[data-color-theme] .detailgroup,
+html[data-color-theme] .detailgrouphead,
+html[data-color-theme] .detailempty,
+html[data-color-theme] .weeklyportrait-placeholder{
+  border-color:var(--ui-border)!important;
+}
+html[data-color-theme] .person,
+html[data-color-theme] .portrait,
+html[data-color-theme] .challengeicon,
+html[data-color-theme] .weeklyportrait:not(.completed),
+html[data-color-theme] .characterface,
+html[data-color-theme] .characterpickbtn,
+html[data-color-theme] .pickerclose,
+html[data-color-theme] .charactersearch,
+html[data-color-theme] .pickerfilter,
+html[data-color-theme] .characteroption,
+html[data-color-theme] .characterstate,
+html[data-color-theme] .fontselect,
+html[data-color-theme] .fontoption,
+html[data-color-theme] .fontpickerpreview,
+html[data-color-theme] .colorthemeoption,
+html[data-color-theme] .markedcoloroption,
+html[data-color-theme] .detailcharacter,
+html[data-color-theme] .detailgroup,
+html[data-color-theme] .detailgrouphead,
+html[data-color-theme] .detailempty{
+  background:var(--ui-panel)!important;color:var(--text)!important;
+}
+html[data-color-theme] .characterstate.complete{color:var(--text)!important;border-color:var(--ui-accent)!important;background:var(--ui-soft)!important}
+html[data-color-theme] .characterstate.inprogress{color:var(--ui-highlight)!important;border-color:var(--ui-accent)!important;background:var(--ui-soft)!important}
+html[data-color-theme] .characteroption.selected,
+html[data-color-theme] .fontoption[aria-pressed=true],
+html[data-color-theme] .colorthemeoption.active,
+html[data-color-theme] .pickerfilter.active,
+html[data-color-theme] .markedcoloroption.active{
+  border-color:var(--ui-accent)!important;box-shadow:inset 0 0 0 1px var(--ui-accent)!important;background:color-mix(in srgb,var(--accent) 15%,var(--ui-panel))!important;color:var(--text)!important;
+}
+html[data-color-theme] .characteroption.selected strong,
+html[data-color-theme] .fontoption[aria-pressed=true] .fontname,
+html[data-color-theme] .colorthemeoption.active strong{color:var(--text)!important}
+html[data-color-theme] .characterstate.notstarted,
+html[data-color-theme] .pickcopy small.characterstate.notstarted{color:var(--muted)!important;border-color:var(--ui-border)!important;background:var(--ui-panel)!important}
+html[data-color-theme] .weeklyportrait-placeholder{border:2px dashed var(--ui-accent)!important;background:color-mix(in srgb,var(--accent) 18%,var(--ui-panel))!important}
+html[data-color-theme] .weeklyitem.dragging{outline-color:var(--ui-accent)!important}
+html[data-color-theme] .weeklyportrait.completed{border-color:var(--marked-color,var(--ui-accent))!important;outline-color:var(--marked-border,var(--ui-border))!important}
+html[data-color-theme] .overviewdraghandle{background:var(--ui-panel)!important;color:var(--ui-highlight)!important;border-color:var(--ui-border)!important}
+html[data-color-theme] .weeklyitemhead:hover{background:color-mix(in srgb,var(--accent) 9%,var(--ui-panel))!important}
+html[data-color-theme] .fontpickerpreview>span:nth-of-type(2),
+html[data-color-theme] .fontdesc,
+html[data-color-theme] .fontpickerfoot>span,
+html[data-color-theme] .colorthemeoption small{color:var(--muted)!important}
+html[data-color-theme] .fontpreviewbar{background:var(--ui-soft)!important}
+html[data-color-theme] .fontpreviewbar span{background:linear-gradient(90deg,var(--accent),var(--ui-highlight))!important}
+html[data-color-theme] .fontpickerhead h2,
+html[data-color-theme] .confirmmodalhead h2,
+html[data-color-theme] .detailhead h2,
+html[data-color-theme] .colorthemeshead h2{color:var(--text)!important}
+html[data-color-theme] .charpickermodal>.charpickerhead,
+html[data-color-theme] .detailmodal>.detailhead{background:var(--ui-modal)!important;border-color:var(--ui-border)!important}
+html[data-color-theme] .feedbackselectmenu,
+html[data-color-theme] .feedbackselectmenu button,
+html[data-color-theme] .feedbackselectmenu button:hover,
+html[data-color-theme] .feedbackselectmenu button:focus-visible,
+html[data-color-theme] .feedbackselectmenu button[aria-selected=true]{
+  border-color:var(--ui-border)!important;color:var(--text)!important;
+}
+html[data-color-theme] .feedbackselectmenu{background:var(--ui-panel)!important}
+html[data-color-theme] .feedbackselectmenu button:hover,
+html[data-color-theme] .feedbackselectmenu button:focus-visible,
+html[data-color-theme] .feedbackselectmenu button[aria-selected=true]{background:color-mix(in srgb,var(--accent) 15%,var(--ui-panel))!important}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
