@@ -1064,6 +1064,28 @@ html body .markedcolorsection h3 {
   font-family: var(--heading-font), var(--body-font), sans-serif !important;
 }
 /* Amostras de fonte e emojis ficam fora da regra global para preservar sua aparência. */
+
+/* Sincroniza o relógio e os seletores de aparência com o tema ativo. */
+html[data-color-theme="purple"]{--theme-surface:#171020;--theme-modal:linear-gradient(155deg,#251837,#100b1c);--theme-border:#75549a;--theme-soft:#130d20;--theme-highlight:#eadbff}
+html[data-color-theme="black"]{--theme-surface:#101010;--theme-modal:linear-gradient(155deg,#222,#101010);--theme-border:#555;--theme-soft:#171717;--theme-highlight:#f4f4f4}
+html[data-color-theme="white"]{--theme-surface:#f4f4f4;--theme-modal:linear-gradient(155deg,#fff,#eaeaea);--theme-border:#c8c8c8;--theme-soft:#fff;--theme-highlight:#333}
+html[data-color-theme="beige"]{--theme-surface:#eee1cb;--theme-modal:linear-gradient(155deg,#fff8ec,#e9dcc6);--theme-border:#c7b18e;--theme-soft:#fff4e2;--theme-highlight:#80633d}
+html[data-color-theme="blue"]{--theme-surface:#091b2c;--theme-modal:linear-gradient(155deg,#102b43,#071525);--theme-border:#38bdf8;--theme-soft:#0b2036;--theme-highlight:#7dd3fc}
+html[data-color-theme="green"]{--theme-surface:#091f19;--theme-modal:linear-gradient(155deg,#123b31,#071b17);--theme-border:#34d399;--theme-soft:#0b241d;--theme-highlight:#6ee7b7}
+html[data-color-theme="red"]{--theme-surface:#210b12;--theme-modal:linear-gradient(155deg,#4a1723,#190910);--theme-border:#fb7185;--theme-soft:#2a0e17;--theme-highlight:#fda4af}
+html[data-color-theme="gold"]{--theme-surface:#171108;--theme-modal:linear-gradient(155deg,#493716,#171108);--theme-border:#eabf55;--theme-soft:#21190b;--theme-highlight:#f5d477}
+html[data-color-theme] .clockcard{background:var(--theme-modal)!important;border-color:var(--theme-border)!important;color:var(--text)!important}
+html[data-color-theme] .resetbox{background:var(--theme-surface)!important;border-color:var(--theme-border)!important}
+html[data-color-theme] .clocktime,html[data-color-theme] .resetcount{color:var(--theme-highlight)!important}
+html[data-color-theme] .fontpickermodal,html[data-color-theme] .colorthemesmodal{background:var(--theme-modal)!important;border-color:var(--theme-border)!important;color:var(--text)!important}
+html[data-color-theme] .fontpickerpreview,html[data-color-theme] .fontoption,html[data-color-theme] .colorthemeoption{background:var(--theme-surface)!important;border-color:var(--theme-border)!important;color:var(--text)!important}
+html[data-color-theme] .fontprevieweyebrow{color:var(--theme-highlight)!important}
+html[data-color-theme] .fontpickerpreview>span:nth-of-type(2),html[data-color-theme] .fontpickerpreview small{color:var(--muted)!important}
+html[data-color-theme] .fontpreviewbar{background:var(--theme-soft)!important}
+html[data-color-theme] .fontpreviewbar span{background:var(--theme-highlight)!important}
+html[data-color-theme] .colorthemeoption.active,html[data-color-theme] .fontoption.active{border-color:var(--theme-border)!important;box-shadow:0 0 0 1px var(--theme-border)!important}
+html[data-color-theme] .colorthemeshead h2,html[data-color-theme] .fontpickerhead h2{color:var(--text)!important}
+
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
