@@ -1009,6 +1009,33 @@ html[data-color-theme="black"] .feedbackform select option{background:#1b1b1b;co
 .supportpix strong{font-size:14px;color:var(--text);overflow-wrap:anywhere}
 .supportpixstatus{font-size:11px;color:var(--muted)}
 @media(max-width:520px){.support-trigger{margin-bottom:8px}.supportactions>*{flex:1 1 100%}}
+
+/* A fonte selecionada deve prevalecer sobre estilos antigos e específicos. */
+html body *:not(.challengeemoji):not(.fontsample),
+html body *:not(.challengeemoji):not(.fontsample)::before,
+html body *:not(.challengeemoji):not(.fontsample)::after {
+  font-family: var(--body-font), system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+html body .statvalue,
+html body .clocktime,
+html body .resetcount,
+html body .brand h1,
+html body .head h2,
+html body .charpickerhead h2,
+html body .pickcopy strong,
+html body .personmain strong,
+html body .weeklyitem strong,
+html body .fontpickerhead h2,
+html body .fontpickerpreview strong,
+html body .colorthemeshead h2,
+html body .markedcolorsection h3 {
+  font-family: var(--heading-font), var(--body-font), sans-serif !important;
+}
+/* Amostras e emojis mantêm a tipografia própria para não distorcer a prévia nem os ícones. */
+html body .fontsample,
+html body .challengeemoji {
+  font-family: inherit;
+}
 </style></head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
