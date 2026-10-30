@@ -1467,6 +1467,23 @@ html[data-color-theme] .weeklyitem .progress>span{background:var(--marked-color,
   .weeklyitemhead,.weeklyportrait,.weeklyitem>.progress span{transition:none!important}
 }
 </style>
+
+<style id="hzm-smoother-window-opening">
+/* Abertura mais leve: evita clip-path e animações longas que podem causar engasgos. */
+.overviewdetails[open]>.overviewcontent{
+  animation:hzm-overview-fast .18s ease-out both!important;
+}
+@keyframes hzm-overview-fast{
+  from{opacity:0;transform:translateY(-3px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.weeklyitembody{
+  transition:max-height .2s ease-out,opacity .16s ease-out,transform .16s ease-out,padding .2s ease-out!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .overviewdetails[open]>.overviewcontent,.weeklyitembody{animation:none!important;transition:none!important}
+}
+</style>
 </head><body><main class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="imagens/GrandChase.png" alt="Grand Chase Classic"></div><div><h1>Grand Chase Classic</h1></div></div><button type="button" class="btn small" id="visualmodebutton" aria-label="Alternar modo visual">Versão leve</button><button type="button" class="btn small" id="colorthemebutton" aria-label="Alterar esquema de cores">Cores: Roxo</button><div class="fonttools"><span class="fonttoolslabel">Fonte</span><button type="button" class="fontselect fontopenbtn" id="openfontpicker" aria-haspopup="dialog" aria-controls="fontpicker">Aa <span id="currentfontname">Inter</span><span aria-hidden="true">⌄</span></button><select class="hidden" id="fontselect" aria-hidden="true" tabindex="-1"><option value="inter">Inter</option><option value="rajdhani">Rajdhani</option><option value="oxanium">Oxanium</option><option value="roboto-slab">Roboto Slab</option><option value="jetbrains-mono">JetBrains Mono</option><option value="playfair-display">Playfair Display</option><option value="oswald">Oswald</option><option value="comic-neue">Comic Neue</option></select></div></header>
 
