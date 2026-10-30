@@ -363,8 +363,6 @@ html[data-visual-mode="light"] body{background:#111018;color:#eeeaf5;font-family
 }
 @media(prefers-reduced-motion:reduce){.statcard,.btn,.characterpickbtn,.weeklyitemhead{transition:none!important}}
 
-/* Mantém a abertura suave da visão geral mesmo no tema claro. */
-html[data-visual-mode="light"] .overviewdetails[open]>.overviewcontent{animation:hzm-overview-reveal 1s cubic-bezier(.2,.7,.25,1) both!important;transform-origin:top center}
 
 
 /* Modal de desafios concluídos: três personagens por linha em telas largas. */
@@ -1469,16 +1467,10 @@ html[data-color-theme] .weeklyitem .progress>span{background:var(--marked-color,
 </style>
 
 <style id="hzm-smoother-window-opening">
-/* Abertura mais leve: evita clip-path e animações longas que podem causar engasgos. */
-.overviewdetails[open]>.overviewcontent{
-  animation:hzm-overview-fast .18s ease-out both!important;
-}
-@keyframes hzm-overview-fast{
-  from{opacity:0;transform:translateY(-3px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.weeklyitembody{
-  transition:max-height .2s ease-out,opacity .16s ease-out,transform .16s ease-out,padding .2s ease-out!important;
+/* A versão completa preserva as animações originais; a versão leve desativa animações e transições no CSS próprio. */
+html[data-visual-mode="full"] .overviewdetails[open]>.overviewcontent{
+  animation:hzm-overview-reveal 1s cubic-bezier(.2,.7,.25,1) both!important;
+  transform-origin:top center;
 }
 @media(prefers-reduced-motion:reduce){
   .overviewdetails[open]>.overviewcontent,.weeklyitembody{animation:none!important;transition:none!important}
